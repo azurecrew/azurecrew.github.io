@@ -1,0 +1,18 @@
+/public
+resources
+node_modules
+.env
+*.env
+*.env
+.env.*
+/_cache
+/data
+/.vscode
+.npmrc
+# Local Netlify folder
+.netlify
+
+/assets/css/index.css
+/themes/hugo-twcss/assets/css/index.css
+/themes/twjit/assets/css/index.css
+.hugo_build.lock
