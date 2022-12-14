@@ -12,7 +12,6 @@ node_modules
 # Local Netlify folder
 .netlify
 
-/assets/css/index.css
-/themes/hugo-twcss/assets/css/index.css
-/themes/twjit/assets/css/index.css
+/static/css/index.css
+/statkc
 .hugo_build.lock

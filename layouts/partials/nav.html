@@ -1,0 +1,41 @@
+
+
+<nav class="fixed w-full p-8 z-[900] flex flex-row justify-between">
+    <div>
+        {{ $logo := resources.Get .Site.Params.logo }}
+        <img style="fill: white;" src="{{ $logo.RelPermalink }}" alt="{{ .Title }} logo" />
+    </div>
+
+    <ul class="flex flex-row text-white">
+        {{ $current := .}}
+        {{ range .Site.Menus.main.ByWeight }}
+            {{ $topLevel := replace .URL "/" "" }}
+            {{ $active := "" }}
+
+            {{ if eq $current.RelPermalink .URL }}
+            {{ $active = "underline" }}
+            {{ end }}
+
+            {{ if eq $current.Type $topLevel }}
+            {{ $active = "underline" }}
+            {{ end }}
+
+            {{ if and (or (eq $current.RelPermalink .URL) (eq "term" $current.Kind)) (in (slice "page" "term") $current.Kind) }}
+                {{ range (split .URL "/") }}
+                    {{ if eq "blog" . }}
+                    {{ $active = "underline" }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            <li class="{{ $active }} underline-offset-2 mr-4">
+                <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+
+        {{ end }}
+
+        <li class="ml-5 mr-5">
+            <a><ion-icon class="text-2xl"  name="search-outline"></ion-icon></a>
+        </li>
+    </ul>
+</nav>

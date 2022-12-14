@@ -1,4 +1,4 @@
-# baseURL = "https://example.com" # Change to your site URL and un-comment, of course
+baseURL: "https://azurecrew.com" # Change to your site URL and un-comment, of course
 languageCode: en-us # Change if not appropriate for your site
 title: Jon Zlotnik
 # theme: hugo-twcss
@@ -16,6 +16,8 @@ params:
     # Domain: "example.com"
     Author: "Your name goes here"
     Description: "Your site description goes here"
+    Logo: "svg/azurecrewlogo-white.svg"
+
 
 markup:
   # Reverting to Hugo-standard Goldmark parser and will handle typographical niceties
@@ -39,15 +41,24 @@ markup:
     highlight:
       guessSyntax: true
       noClasses: false
-# menu:
-#     main:
-#       - identifier: "about"
-#         name: "About"
-#         title: "Whatever you call your 'about' page"
-#         url: "/about/"
-#         weight: 100
-#       - identifier: "posts"
-#         name: "Posts"
-#         title: "This site's posts"
-#         url: "/posts/"
-#         weight: 110
+menu:
+    main:
+      - identifier: "home"
+        name: "Home"
+        url: "/"
+        weight: 1
+      - identifier: "about"
+        name: "About"
+        title: "Whatever you call your 'about' page"
+        url: "/about/"
+        weight: 2
+      - identifier: "blog"
+        name: "Blog"
+        title: "This site's posts"
+        url: "/posts/"
+        weight: 3
+      - identifier: "contact"
+        name: "Contact"
+        title: "This site's posts"
+        url: "/contact/"
+        weight: 3
