@@ -3,11 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        @apply font-thin
-    }
-
     body {
         @apply m-0 p-0
     }
+}
+
+
+html {
+    font-family: "Gothic A1", Sans-serif;
+}
+
+h1,h2,h3 {
+    font-weight: bold;
 }

@@ -1,10 +1,122 @@
-
-
 {{ define "main" }}
 
 <div id="all">
+
   {{ partial "nav.html" . }}
+
   {{ partial "jumbo_carousel.html" . }}
+
+
+  <div class="mt-4 p-5">
+
+    {{/*  <h2 class="my-5 text-4xl">
+      Modern design.
+      Strong framework
+    </h2>
+    <p>
+      The changing media and technology landscape requires a new kind of creative
+      agency with innovation and creativity at its core
+    </p>  */}}
+    {{ .Content }}
+  </div>
+  <div id="top-services-list" class="mt-5 flex flex-col sm:flex-row">
+    <div class="border border-black p-4 m-5">
+      <div>
+        <ion-icon name="server-outline" style="--ionicon-stroke-width: 2px; font-size: 96px;">
+        </ion-icon>
+      </div>
+      <div class="mb-2 font-bold text-lg">Unique features</div>
+      <div class="text-gray-500 font-light text-sm">
+        Elegant, simple and function design. Everyone who sees your site will
+        be delighted and will most likely want to contact you.
+      </div>
+    </div>
+    <div class="border border-black p-4 m-5">
+      <div>
+        <ion-icon name="server-outline" style="--ionicon-stroke-width: 2px; font-size: 96px;">
+        </ion-icon>
+      </div>
+      <div class="mb-2 font-bold text-lg">Unique features</div>
+      <div class="text-gray-500 font-light text-sm">
+        Elegant, simple and function design. Everyone who sees your site will
+        be delighted and will most likely want to contact you.
+      </div>
+    </div>
+    <div class="border border-black p-4 m-5">
+      <div>
+        <ion-icon name="server-outline" style="--ionicon-stroke-width: 2px; font-size: 96px;">
+        </ion-icon>
+      </div>
+      <div class="mb-2 font-bold text-lg">Unique features</div>
+      <div class="text-gray-500 font-light text-sm">
+        Elegant, simple and function design. Everyone who sees your site will
+        be delighted and will most likely want to contact you.
+      </div>
+    </div>
+  </div>
+  {{ $servicesBG := resources.Get "img/DSC_0365.jpg" | images.Filter (images.GaussianBlur 20) (images.Brightness -10) }}
+  <div id="services-banner" style='background-image: url("{{ $servicesBG.RelPermalink }}");'
+    class="bg-fixed bg-cover bg-center p-5 text-white flex flex-col">
+    <h2 class="my-5 text-2xl">
+      Modern design.
+      Strong framework
+    </h2>
+    <div class="text-sm mb-10">
+      The changing media and technology landscape requires a new kind of creative
+      agency with innovation and creativity at its core
+    </div>
+
+    <div class="flex items-center h-full mb-10">
+      <div>
+        {{ $bobbyProfile := resources.GetRemote "https://media-exp1.licdn.com/dms/image/C4E03AQHHsrgkC4j19g/profile-displayphoto-shrink_800_800/0/1663355148448?e=1676505600&v=beta&t=0gWhfG8hPbOUVXizYQHcjbzuVkOvCnQD6plhNgzgSDs"}}
+        {{ $bobbyProfile := $bobbyProfile.Crop "250x250"}}
+        <div style='background-image: url("{{ $bobbyProfile.RelPermalink }}");'
+          class="h-20 w-20 mr-5 rounded-full bg-cover">
+        </div>
+      </div>
+      <div>
+        <div class="font-bold">
+          Bobby OUSTAPASSIDIS
+        </div>
+        <p class="text-sm">Master Azure Admin, <br> CEO/Founder @ Azure Crew</p>
+      </div>
+    </div>
+
+    <div id="read-story-btn" class="
+    max-w-xs self-center
+    mb-3 py-3 pl-14 pr-4 rounded-full 
+    bg-white  text-black hover:bg-black hover:text-white
+    flex flex-row items-center justify-center">
+      <span class="mr-8 pt-1 text-sm font-semibold">Read our story</span>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+  </div>
+
+  <div id="footer" class="m-5 pt-5">
+    <div>
+      {{ $logo := resources.Get "svg/azurecrewlogo.svg" }}
+      <img src="{{ $logo.RelPermalink }}" alt="{{ .Title }} logo" class="h-10 mb-4" />
+      <p class="text-sm">
+        Thanks for visiting our website! Hope to hear from you soon.
+        Thanks for visiting our website! Hope to hear from you soon.
+        Thanks for visiting our website! Hope to hear from you soon.
+      </p>
+      <div class="border-b border-gray-400 h-5"> </div>
+      <h3 class="mt-5 mb-2">
+        Contact us
+      </h3>
+      <div >
+        <div class="flex items-center"><ion-icon class="mr-2" name="call"></ion-icon> <span>+1 (514) 999-9999</span></div>
+        <div class="flex items-center"><ion-icon class="mr-2" name="mail"></ion-icon> <span>contact@azurecrew.com</span></div>
+      </div>
+      <div class="border-b border-gray-400 h-5 mb-5"> </div>
+      <div class="flex justify-center">
+        <div class="text-sm text-center max-w-[200px]">&copy; Copyright 2022, Azure Crew. <br> All Rights Reserved</div>
+      </div>
+    </div>
+  </div>
+
+
   {{/*  <!--    {{ partial "top.html" . }}
 
   {{ partial "nav.html" . }}
@@ -22,6 +134,7 @@
   {{ partial "clients.html" . }}
 
   {{ partial "footer.html" . }} --> */}}
+
 
 </div>
 <!-- /#all -->

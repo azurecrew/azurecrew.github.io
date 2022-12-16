@@ -15,8 +15,8 @@ module.exports = {
     }),
     colors: {
       transparent: 'transparent',
-      white: '#ffffff',
-      black: colors.stone['900'],
+      white: colors.white,
+      black: colors.black,
       gray: colors.neutral,
       red: colors.red,
       green: colors.green,
