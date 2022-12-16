@@ -3,7 +3,7 @@ title: "About | Azure Crew"
 draft: false
 ---
 
-# This is the about page.
+# Our story
 
 Here we say a bunch of cool stuff about the company.
 Here we say a bunch of cool stuff about the company.
@@ -28,16 +28,16 @@ This is what we do!
 This is what we do!
 This is what we do!
 
-## We have these certifications
+## Who we are
 
-![](https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg)
-![](https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg)
-![](https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg)
+
+
+# Our creds
+A paragraph descibing what our credentials mean for our clients and how our
+credentials, or other, help achieve our clients' goals.
 
 <ul class="w-full flex justify-between">
-<li>
-    <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg">
-</li>
-<li>cert</li>
-<li>cert</li>
+<li>{{< figure src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" width="100" >}}</li>
+<li>{{< figure src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" width="100" >}}</li>
+<li>{{< figure src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" width="100" >}}</li>
 </ul>

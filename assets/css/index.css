@@ -442,9 +442,33 @@ video {
   display: none;
 }
 
+html {
+  font-family: "Gothic A1", Sans-serif;
+}
+
 body {
   margin: 0px;
   padding: 0px;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+h1,h2,h3 {
+  font-weight: bold;
+}
+
+h1 {
+  margin-bottom: 1.25rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 *, ::before, ::after {
@@ -588,8 +612,8 @@ body {
   --tw-backdrop-sepia:  ;
 }
 
-.fixed {
-  position: fixed;
+.absolute {
+  position: absolute;
 }
 
 .z-\[900\] {
@@ -892,14 +916,6 @@ body {
   text-underline-offset: 2px;
 }
 
-html {
-  font-family: "Gothic A1", Sans-serif;
-}
-
-h1,h2,h3 {
-  font-weight: bold;
-}
-
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -918,3 +934,8 @@ h1,h2,h3 {
             flex-direction: row;
   }
 }
+
+
+
+
+

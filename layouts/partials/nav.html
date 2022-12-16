@@ -1,12 +1,12 @@
 
 
-<nav class="fixed w-full p-8 z-[900] flex flex-row justify-between">
+<nav class="absolute w-full p-8 z-[900] flex flex-row justify-between">
     <div>
         {{ $logo := resources.Get .Site.Params.logo }}
         <img src="{{ $logo.RelPermalink }}" alt="{{ .Title }} logo" />
     </div>
 
-    <ul class="flex flex-row text-black">
+    <ul class='flex flex-row {{ cond (.IsHome) "text-white" "text-black" }}'>
         {{ $current := .}}
         {{ range .Site.Menus.main.ByWeight }}
             {{ $topLevel := replace .URL "/" "" }}
