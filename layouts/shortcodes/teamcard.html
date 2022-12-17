@@ -1,0 +1,19 @@
+<div class="flex flex-col items-center text-center h-full mb-10">
+    <div>
+        {{$path := .Get "photo"}}
+      {{ $photo := resources.GetRemote $path}}
+      {{/*  {{ $photo := $photo.Crop "250x250" }}  */}}
+      {{ $photo := $photo.Filter (images.Grayscale)}}
+      <div style='background-image: url("{{ $photo.RelPermalink }}");'
+        class="mb-5 rounded-full bg-cover">
+      </div>
+    </div>
+    <div>
+      <div class="font-bold">
+        {{ .Get "fullname" }}
+      </div>
+      <p class="text-sm">
+        {{ .Get "details"}}
+      </p>
+    </div>
+  </div>
