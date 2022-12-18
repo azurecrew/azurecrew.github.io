@@ -1,19 +1,23 @@
-<div class="flex flex-col items-center text-center h-full mb-10">
+<div class="flex flex-col items-center text-center h-full mt-10 mb-16">
     <div>
         {{$path := .Get "photo"}}
       {{ $photo := resources.GetRemote $path}}
       {{/*  {{ $photo := $photo.Crop "250x250" }}  */}}
       {{ $photo := $photo.Filter (images.Grayscale)}}
-      <div style='background-image: url("{{ $photo.RelPermalink }}");'
-        class="mb-5 rounded-full bg-cover">
-      </div>
+      <div style='background-image: url("{{ $photo.Permalink }}");'
+        class="mb-5 h-[200px] w-[200px] rounded-full bg-cover"> </div>
     </div>
     <div>
-      <div class="font-bold">
+      <div class="font-bold text-2xl">
         {{ .Get "fullname" }}
       </div>
       <p class="text-sm">
         {{ .Get "details"}}
       </p>
+      <div class="flex justify-center text-gray-600">
+        <ion-icon class="mx-3" size="large" name="logo-linkedin"></ion-icon>
+        <ion-icon class="mx-3" size="large" name="logo-twitter"></ion-icon>
+        <ion-icon class="mx-3" size="large" name="logo-github"></ion-icon>
+      </div>
     </div>
   </div>
