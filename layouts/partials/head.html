@@ -11,7 +11,7 @@
 {{ if gt (len $keywords) 0 }}
 <meta name="keywords" content='{{ delimit (uniq $keywords) ", " }}'>
 {{ end }}
-{{ $description_plain := default .Site.Params.defaultDescription .Description | markdownify | plainify }}
+{{ $description_plain := default "Azure Crew" .Site.Params.Description | markdownify | plainify }}
 <meta name="description" content="{{ $description_plain }}">
 
 {{ hugo.Generator }}
@@ -37,3 +37,19 @@
 <!-- Ionicons -->
 <script type="module" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
+
+<!-- Alpine.js -->
+<!-- Alpine Plugins -->
+<script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+ 
+<!-- Alpine Core -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- Glide.js -->
+<script defer src="https://unpkg.com/@glidejs/glide"></script>
+
+<!-- Required Core Stylesheet -->
+<link rel="stylesheet" href="https://unpkg.com/@glidejs/glide/dist/css/glide.core.min.css">
+
+<!-- Optional Theme Stylesheet -->
+<link rel="stylesheet" href="https://unpkg.com/@glidejs/glide/dist/css/glide.theme.min.css">

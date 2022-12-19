@@ -16,7 +16,9 @@ params:
     # Domain: "example.com"
     Author: "Your name goes here"
     Description: "Your site description goes here"
-    Logo: "svg/azurecrewlogo-white.svg"
+    Logo: "svg/azurecrewlogo.svg"
+    LogoBlack: "svg/azurecrewlogo-black.svg"
+    LogoWhite: "svg/azurecrewlogo-white.svg"
 
 
 markup:
