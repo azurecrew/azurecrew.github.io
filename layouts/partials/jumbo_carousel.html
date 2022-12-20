@@ -19,7 +19,6 @@
     <div class="jumbotron-carousel">
         {{ range sort .Site.Data.carousel "weight" }}
         <div class="jumbotron-carousel-cell">
-            
                 <div class="flex flex-col h-full w-full justify-center items-center text-center bg-no-repeat bg-cover"
                     style="background-image: url('{{ .image }}')">
                     <h1 class="p-5 text-white text-5xl font-bold">{{ .title | safeHTML }}</h1>
