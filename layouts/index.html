@@ -7,19 +7,23 @@
   {{ partial "jumbo_carousel.html" . }}
 
 
-  <div class="mt-5 p-5">
+  <div class="mt-10 p-5">
     {{ .Content }}
   </div>
-  <div id="top-services-list" class="mt-5 flex flex-col sm:flex-row">
+  <div id="top-services-list" class="flex flex-col sm:flex-row">
+    {{ $o365typeform := printf "%s#selected_services=Office%20365" .Site.Params.TypeformURL}}
     {{ partial "service_card.html" 
       (dict "servicetitle"        "Microsoft O365" 
-            "servicedescription"  "Identity Management, Licensing, Exchange Online, Teams, Administration/Implementation" ) }}
+            "servicedescription"  "Identity Management - Licensing - Exchange Online - Teams - Administration/Implementation" 
+            "typeformurl"         $o365typeform) }}
     {{ partial "service_card.html" 
       (dict "servicetitle"        "Azure Cloud Migration" 
-            "servicedescription"  "Go Hybrid, Virtual Machine Migration, Server Migration, Applications, Azure Arc" ) }}
+            "servicedescription"  "Going Hybrid - Virtual Machine Migration - Server Migration - Applications - Azure Arc" 
+            "typeformurl"         .Site.Params.TypeformURL) }}
     {{ partial "service_card.html" 
       (dict "servicetitle"        "Azure Security and Compliance"
-            "servicedescription"  "MS cloud defender Score, Sentinel, MCAS Cloud App Security, Security Alerting, DLP" ) }}
+            "servicedescription"  "MS cloud defender Score - Sentinel - MCAS Cloud App Security - Security Alerting - DLP" 
+            "typeformurl"         .Site.Params.TypeformURL) }}
   </div>
   <div class="flex justify-center p-10">
   <div id="read-story-btn" class="
