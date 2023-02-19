@@ -1,12 +1,12 @@
 {{/*  Navbar  */}}
 <div x-data="{ open: false }">
 <nav class="absolute w-full p-8 z-[900] flex flex-row justify-between items-center">
-    <div>
+    <a href="/" class="cursor-pointer">
         {{ $logoWhite := resources.Get .Site.Params.logowhite}}
         {{ $logoBlack := resources.Get .Site.Params.logoblack }}
         {{/*  {{ .Site.Params.logo }}  */}}
         <img class="h-10" src="{{cond (.IsHome) $logoWhite.RelPermalink $logoBlack.RelPermalink }}" alt="{{ .Title }} logo" />
-    </div>
+    </a>
 
 
     <div class='flex flex-row items-center {{ cond (.IsHome) "text-white" "text-black" }}'>

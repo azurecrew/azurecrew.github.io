@@ -776,6 +776,10 @@ h2 {
   max-width: 200px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .flex-row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;

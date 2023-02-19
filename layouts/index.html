@@ -11,9 +11,15 @@
     {{ .Content }}
   </div>
   <div id="top-services-list" class="mt-5 flex flex-col sm:flex-row">
-    {{ partial "service_card.html" . }}
-    {{ partial "service_card.html" . }}
-    {{ partial "service_card.html" . }}
+    {{ partial "service_card.html" 
+      (dict "servicetitle"        "Microsoft O365" 
+            "servicedescription"  "Identity Management, Licensing, Exchange Online, Teams, Administration/Implementation" ) }}
+    {{ partial "service_card.html" 
+      (dict "servicetitle"        "Azure Cloud Migration" 
+            "servicedescription"  "Go Hybrid, Virtual Machine Migration, Server Migration, Applications, Azure Arc" ) }}
+    {{ partial "service_card.html" 
+      (dict "servicetitle"        "Azure Security and Compliance"
+            "servicedescription"  "MS cloud defender Score, Sentinel, MCAS Cloud App Security, Security Alerting, DLP" ) }}
   </div>
   <div class="flex justify-center p-10">
   <div id="read-story-btn" class="
@@ -42,7 +48,7 @@
 
     <div class="flex items-center h-full mb-10">
       <div>
-        {{ $bobbyProfile := resources.GetRemote "https://media-exp1.licdn.com/dms/image/C4E03AQHHsrgkC4j19g/profile-displayphoto-shrink_800_800/0/1663355148448?e=1676505600&v=beta&t=0gWhfG8hPbOUVXizYQHcjbzuVkOvCnQD6plhNgzgSDs"}}
+        {{ $bobbyProfile := resources.Get "img/boustaps-profile.jpg"}}
         {{ $bobbyProfile := $bobbyProfile.Crop "250x250"}}
         <div style='background-image: url("{{ $bobbyProfile.RelPermalink }}");'
           class="h-20 w-20 mr-5 rounded-full bg-cover">
@@ -56,14 +62,14 @@
       </div>
     </div>
 
-    <div id="read-story-btn" class="
+    <a id="read-story-btn" href="/about" class="
     max-w-xs self-center
     mb-3 py-3 pl-14 pr-4 rounded-full 
     bg-white  text-black hover:bg-black hover:text-white
     flex flex-row items-center justify-center">
       <span class="mr-8 pt-1 text-sm font-semibold">Read our story</span>
       <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
+  </a>
   </div>
 </div>
 <!-- /#all -->
