@@ -1,28 +1,48 @@
 <div id="footer" class="m-5 pt-10">
-    <div>
+
+    {{/*  Footer  */}}
+    <div class="flex justify-center flex-row flex-wrap max-w-full">
+        
+        {{/*  Thank you blurb with logo  */}}
+        <div class="max-w-lg">
         {{ $logo := resources.Get "svg/azurecrewlogo.svg" }}
         <img src="{{ $logo.RelPermalink }}" alt="{{ .Title }} logo" class="h-10 mb-4" />
         <p class="text-sm">
-            Thanks for visiting our website! Hope to hear from you soon.
-            Thanks for visiting our website! Hope to hear from you soon.
-            Thanks for visiting our website! Hope to hear from you soon.
+            Thank you for visiting Azure Crew! 
+            We appreciate your time and interest in our Azure Cloud services.
+            <br>
+            If you have any questions or would like to learn more about how we 
+            can help your business with Azure Cloud migration, Microsoft O365 
+            configuration, or security and compliance, please don't hesitate to contact us. 
         </p>
-        <div class="h-3"> </div>
-        <h3 class="mt-5 mb-2">
-            Contact us
-        </h3>
-        <div>
-            <div class="flex items-center">
-                <ion-icon class="mr-2" name="call"></ion-icon> <span>+1 (514) 999-9999</span>
-            </div>
-            <div class="flex items-center">
-                <ion-icon class="mr-2" name="mail"></ion-icon> <span>contact@azurecrew.com</span>
+        </div>
+
+        {{/*  Spacer  */}}
+        <div class="h-3 flex-shrink-0 md:w-10"> </div>
+
+        {{/*  Contact us  */}}
+        <div class="lg:flex lg:flex-col">
+            <h3 class="mt-5 mb-2 max-md:hidden md:block">
+                Contact info
+            </h3>
+            <div>
+                <div class="flex items-center">
+                    <ion-icon class="mr-2" name="call"></ion-icon> <span>+1 (514) 999-9999</span>
+                </div>
+                <div class="flex items-center">
+                    <ion-icon class="mr-2" name="mail"></ion-icon> <span>info@azurecrew.com</span>
+                </div>
             </div>
         </div>
-        <div class="border-b border-gray-400 h-5 mb-5"> </div>
-        <div class="flex justify-center">
-            <div class="text-sm text-center max-w-[200px]">&copy; Copyright 2022, Azure Crew. <br> All Rights Reserved
-            </div>
+
+    </div>
+
+    {{/*  Horizontal rule  */}}
+    <div class="border-b border-gray-400 h-5 mb-5"> </div>
+
+    {{/*  Copyright  */}}
+    <div class="flex justify-center">
+        <div class="text-sm text-center max-w-[200px]">&copy; Copyright 2022, Azure Crew. <br> All Rights Reserved
         </div>
     </div>
 </div>

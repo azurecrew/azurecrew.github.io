@@ -1,11 +1,11 @@
-<div class="flex flex-col items-center text-center h-full mt-10 mb-16">
+<div class="flex flex-col items-center text-center w-64 h-80 m-5">
     <div>
         {{$path := .Get "photo"}}
       {{ $photo := resources.Get $path}}
       {{/*  {{ $photo := $photo.Crop "250x250" }}  */}}
       {{ $photo := $photo.Filter (images.Grayscale)}}
       <div style='background-image: url("{{ $photo.Permalink }}");'
-        class="mb-5 h-[200px] w-[200px] rounded-full bg-cover"> </div>
+        class="mb-5 h-[175px] w-[175px] rounded-full bg-cover"> </div>
     </div>
     <div>
       <div class="font-bold text-2xl">
