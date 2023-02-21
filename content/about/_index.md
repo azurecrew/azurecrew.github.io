@@ -3,7 +3,7 @@ title: "About | Azure Crew"
 draft: false
 ---
 
-# Our story
+## Our story
 
 Here we say a bunch of cool stuff about the company.
 Here we say a bunch of cool stuff about the company.
@@ -11,7 +11,7 @@ Here we say a bunch of cool stuff about the company.
 Here we say a bunch of cool stuff about the company.
 Here we say a bunch of cool stuff about the company.
 
-## What we believe
+### What we believe
 
 This is what we believe!
 This is what we believe!
@@ -19,7 +19,7 @@ This is what we believe!
 This is what we believe!
 This is what we believe!
 
-## What we do
+### What we do
 
 This is what we do!
 This is what we do!
@@ -28,16 +28,22 @@ This is what we do!
 This is what we do!
 This is what we do!
 
-# Our team gets you operating efficiently.
+## Our team gets you operating efficiently.
 
+<div class="h-5"></div>
+<div class="w-full flex justify-center">
+<div class="w-full max-w-screen-lg flex flex-wrap justify-around">
 {{< teamcard fullname="Bobby Oustapassidis" details="Super cool dude."
-    photo="https://media-exp1.licdn.com/dms/image/C4E03AQHHsrgkC4j19g/profile-displayphoto-shrink_800_800/0/1663355148448?e=1676505600&v=beta&t=0gWhfG8hPbOUVXizYQHcjbzuVkOvCnQD6plhNgzgSDs">}}
+    photo="img/boustaps-profile.jpg">}}
 {{< teamcard fullname="Nicolas Sao" details="Super cool dude."
-    photo="https://media-exp1.licdn.com/dms/image/C4E03AQHHsrgkC4j19g/profile-displayphoto-shrink_800_800/0/1663355148448?e=1676505600&v=beta&t=0gWhfG8hPbOUVXizYQHcjbzuVkOvCnQD6plhNgzgSDs">}}
+    photo="img/boustaps-profile.jpg">}}
 {{< teamcard fullname="Jonathan Zlotnik" details="Super cool dude."
-    photo="https://media.licdn.com/dms/image/C4D03AQFrIzM2RdZOYA/profile-displayphoto-shrink_800_800/0/1522610119889?e=1676505600&v=beta&t=XzFW5Tz8Ksm-g2SoMvdyJ_waOtPWP3s2OoPvAgcbP50">}}
+    photo="img/boustaps-profile.jpg">}}
+</div>
+</div>
+<div class="h-16"></div>
 
-# With our combined expertise, there isn't a problem we can't solve.
+## With our combined expertise, there isn't a problem we can't solve.
 
 A paragraph descibing what our credentials mean for our clients and how our
 credentials, or other, help achieve our clients' goals.

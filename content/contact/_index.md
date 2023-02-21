@@ -3,7 +3,7 @@
 Tell us everything about your problem, we'll be glad to help.
 
 <div class="hidden lg:block">
-<div data-tf-widget="pLK67nqh" data-tf-iframe-props="title=Contact the Azure Crew" data-tf-medium="snippet" style="width:100%;height:400px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
+<div data-tf-widget="pLK67nqh" data-tf-iframe-props="title=Contact the Azure Crew" data-tf-medium="snippet" style="width:100%;height:600px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 </div>
 
 <div class="mt-10 flex justify-center lg:hidden">

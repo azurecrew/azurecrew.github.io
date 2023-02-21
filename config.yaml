@@ -20,6 +20,7 @@ params:
     Logo: "svg/azurecrewlogo.svg"
     LogoBlack: "svg/azurecrewlogo-black.svg"
     LogoWhite: "svg/azurecrewlogo-white.svg"
+    TypeformURL: "https://ae7og37tnte.typeform.com/to/pLK67nqh"
 
 
 markup:

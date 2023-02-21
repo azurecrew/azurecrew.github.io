@@ -1,11 +1,20 @@
-<div class="border border-black p-4 m-5">
-    <div>
+<div class="border border-black p-4 m-5 min-w-[100px] max-w-sm flex-1 flex- flex flex-col ">
+    
+  <div>
       <ion-icon name="server-outline" style="--ionicon-stroke-width: 2px; font-size: 96px;">
       </ion-icon>
     </div>
-    <div class="mb-2 font-bold text-lg">Unique features</div>
-    <div class="text-gray-500 font-light text-sm">
-      Elegant, simple and function design. Everyone who sees your site will
-      be delighted and will most likely want to contact you.
+    <div class="mb-2 font-bold text-lg">{{ .servicetitle }}</div>
+    <div class="mb-4 text-gray-500 font-light text-sm">
+      {{ .servicedescription }}
     </div>
+    {{/*  spacer  */}}
+    <div class="flex-grow h-full"></div>
+
+    {{/*  get started button (contact form)  */}}
+    <a class="self-end text-sm bg-gray-100 px-4 py-2 rounded-full"
+      href='{{ .typeformurl }}'>
+      <span class="mr-2">Get started</span><span>></span> 
+      {{/*  <ion-icon name="chevron-forward-outline"></ion-icon>  */}}
+    </a>
   </div>
