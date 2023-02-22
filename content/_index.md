@@ -3,7 +3,7 @@ title: "Azure Crew"
 draft: false
 ---
 
-## Empowering your business in the cloud
+## Strengthen your business in the cloud
 
 We make it easier to focus on your business while benefitting from the power of Azure.
 

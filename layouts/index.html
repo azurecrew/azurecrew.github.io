@@ -6,15 +6,19 @@
 
   {{ partial "jumbo_carousel.html" . }}
 
+  {{/*  Spacer for little dots  */}}
+  <div class="h-10"></div>
+
   {{/*  Main blurb  */}}
   <div class="flex justify-center">
-    <div class="mt-10 p-5 max-w-2xl">
+    <div class="p-5 max-w-screen-lg">
       {{ .Content }}
     </div>
   </div>
 
   {{/*  List of services (top 3)  */}}
-  <div id="top-services-list" class="flex flex-col justify-center sm:flex-row">
+  <div class="flex justify-center">
+  <div id="top-services-list" class="max-w-screen-lg flex flex-col justify-center sm:flex-row">
     {{ $o365typeform := printf "%s#selected_services=Office%20365" .Site.Params.TypeformURL}}
     {{ partial "service_card.html" 
       (dict "servicetitle"        "Microsoft O365" 
@@ -28,8 +32,10 @@
       (dict "servicetitle"        "Azure Security and Compliance"
             "servicedescription"  "MS cloud defender Score - Sentinel - MCAS Cloud App Security - Security Alerting - DLP" 
             "typeformurl"         .Site.Params.TypeformURL) }}
+            
   </div>
-
+  </div>
+  
   {{/*  More services button  */}}
   <div class="flex justify-center p-10">
     <div id="read-story-btn" class="
