@@ -48,7 +48,7 @@ This is what we do!
 A paragraph descibing what our credentials mean for our clients and how our
 credentials, or other, help achieve our clients' goals.
 
-<ul class="w-full flex justify-between">
+<ul class="w-full flex justify-around">
 <li>{{< figure src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" width="100" >}}</li>
 <li>{{< figure src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" width="100" >}}</li>
 <li>{{< figure src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg" width="100" >}}</li>
