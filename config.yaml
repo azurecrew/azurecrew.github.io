@@ -1,5 +1,5 @@
 # baseURL: "https://azurecrew.com" # Change to your site URL and un-comment, of course
-baseURL: "https://azurecrew.github.io/website/" # Change to your site URL and un-comment, of course
+baseURL: "https://azurecrew.github.io/website" # Change to your site URL and un-comment, of course
 languageCode: en-us # Change if not appropriate for your site
 title: Azure Crew
 # theme: hugo-twcss
