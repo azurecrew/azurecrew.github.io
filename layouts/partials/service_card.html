@@ -1,20 +1,27 @@
 <div class="border border-black p-4 m-5 min-w-[100px] max-w-sm flex-1 flex- flex flex-col ">
-    
-  <div>
-      <ion-icon name="server-outline" style="--ionicon-stroke-width: 2px; font-size: 96px;">
-      </ion-icon>
-    </div>
-    <div class="mb-2 font-bold text-lg">{{ .servicetitle }}</div>
-    <div class="mb-4 text-gray-500 font-light text-sm">
-      {{ .servicedescription }}
-    </div>
-    {{/*  spacer  */}}
-    <div class="flex-grow h-full"></div>
 
-    {{/*  get started button (contact form)  */}}
-    <a class="self-end text-sm bg-gray-100 px-4 py-2 rounded-full"
-      href='{{ .typeformurl }}'>
-      <span class="mr-2">Get started</span><span>></span> 
-      {{/*  <ion-icon name="chevron-forward-outline"></ion-icon>  */}}
-    </a>
+  <div>
+    <ion-icon name="server-outline" style="--ionicon-stroke-width: 2px; font-size: 96px;">
+    </ion-icon>
   </div>
+  <div class="mb-2 font-bold text-lg">{{ .servicetitle }}</div>
+  <div class="mb-4 text-gray-500 font-light text-sm">
+    {{ .servicedescription }}
+  </div>
+  {{/*  spacer  */}}
+  <div class="flex-grow h-full"></div>
+
+  {{/*  get started button (contact form)  */}}
+  <a data-tf-popup="pLK67nqh" data-tf-opacity="100" data-tf-size="50" data-tf-iframe-props="answers-priorities=fd8bd9d4-c980-4505-94ef-b1852b409323"
+  data-tf-transitive-search-params data-tf-enable-sandbox data-tf-medium="snippet"
+  class="self-end text-sm bg-gray-100 px-4 py-2 rounded-full cursor-pointer" >
+    <span class="mr-2">Get started</span><span>></span>
+    {{/*  <ion-icon name="chevron-forward-outline"></ion-icon>  */}}
+  </a>
+
+  {{/*  <button 
+    class="h-10 flex-1"
+    style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;background-color:#0445AF;color:#fff;font-size:20px;border-radius:25px;padding:0 33px;font-weight:bold;height:50px;cursor:pointer;line-height:50px;text-align:center;margin:0;text-decoration:none;">
+    Try me!
+  </button>  */}}
+</div>
