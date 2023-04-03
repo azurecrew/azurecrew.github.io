@@ -1,48 +1,53 @@
-<div id="footer" class="m-5 pt-10">
-
-    {{/*  Footer  */}}
-    <div class="flex justify-center flex-row flex-wrap max-w-full">
-        
-        {{/*  Thank you blurb with logo  */}}
-        <div class="max-w-lg">
-        {{ $logo := resources.Get "svg/azurecrewlogo.svg" }}
-        <img src="{{ $logo.RelPermalink }}" alt="{{ .Title }} logo" class="h-10 mb-4" />
-        <p class="text-sm">
-            Thank you for visiting Azure Crew! 
-            We appreciate your time and interest in our Azure Cloud services.
-            <br>
-            If you have any questions or would like to learn more about how we 
-            can help your business with Azure Cloud migration, Microsoft O365 
-            configuration, or security and compliance, please don't hesitate to contact us. 
-        </p>
-        </div>
-
-        {{/*  Spacer  */}}
-        <div class="h-3 flex-shrink-0 md:w-10"> </div>
-
-        {{/*  Contact us  */}}
-        <div class="lg:flex lg:flex-col">
-            <h3 class="mt-5 mb-2 max-md:hidden md:block">
-                Contact info
-            </h3>
-            <div>
-                <div class="flex items-center">
-                    <ion-icon class="mr-2" name="call"></ion-icon> <span>+1 (514) 999-9999</span>
-                </div>
-                <div class="flex items-center">
-                    <ion-icon class="mr-2" name="mail"></ion-icon> <span>info@azurecrew.com</span>
-                </div>
-            </div>
-        </div>
-
+<div class="h-10 bg-gradient-to-t from-gray-100"></div>
+<div id="footer" class="px-10 pt-10 pb-5 flex flex-col items-center">
+  {{/* Footer */}}
+  <div class="flex justify-center flex-row flex-wrap w-full max-w-screen-lg">
+    {{/* Thank you blurb with logo */}}
+    <div class="max-w-lg">
+      {{ $logo := resources.Get "svg/azurecrewlogo.svg" }}
+      <img
+        src="{{ $logo.RelPermalink }}"
+        alt="{{ .Title }} logo"
+        class="h-10 mb-4"
+      />
+      <p class="text-sm">
+        Thank you for visiting Azure Crew! We appreciate your time and interest
+        in our Azure Cloud services.
+        <br />
+        If you have any questions or would like to learn more about how we can
+        help your business with Azure Cloud migration, Microsoft O365
+        configuration, or security and compliance, please don't hesitate to
+        contact us.
+      </p>
     </div>
 
-    {{/*  Horizontal rule  */}}
-    <div class="border-b border-gray-400 h-5 mb-5"> </div>
+    {{/* Spacer */}}
+    <div class="h-3 flex-shrink-0 flex-grow md:w-10"></div>
 
-    {{/*  Copyright  */}}
-    <div class="flex justify-center">
-        <div class="text-sm text-center max-w-[200px]">&copy; Copyright 2022, Azure Crew. <br> All Rights Reserved
+    {{/* Contact us */}}
+    <div class="lg:flex lg:flex-col">
+      <h3 class="mt-5 mb-2 max-md:hidden md:block">Contact info</h3>
+      <div>
+        <div class="flex items-center">
+          <ion-icon class="mr-2" name="call"></ion-icon>
+          <span>+1 (514) 999-9999</span>
         </div>
+        <div class="flex items-center">
+          <ion-icon class="mr-2" name="mail"></ion-icon>
+          <span>info@azurecrew.com</span>
+        </div>
+      </div>
     </div>
+  </div>
+
+  {{/* Horizontal rule */}}
+  <div class="divider"></div>
+
+  {{/* Copyright */}}
+  <div class="flex justify-center">
+    <div class="text-sm text-center max-w-[200px]">
+      &copy; Copyright 2022, Azure Crew. <br />
+      All Rights Reserved
+    </div>
+  </div>
 </div>

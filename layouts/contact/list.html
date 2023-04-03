@@ -1,15 +1,139 @@
 {{ define "main" }}
 
 <div id="all">
-  <div class="h-24">
-    {{ partial "nav.html" . }}
-  </div>
-  <div>
-    <div class="h-10 bg-gradient-to-b from-gray-100"></div>
-    <div class="flex justify-center">
-      <div class="max-w-4xl p-5">
-        {{ .Content }}
+  <div class="h-24">{{ partial "nav.html" . }}</div>
+  <div class="h-10 bg-gradient-to-b from-gray-100"></div>
+  <div class="flex justify-center"> 
+    <div class="max-w-screen-sm flex flex-col p-5">
+      {{ .Content }}
+
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">First name</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Jane"
+          class="input input-bordered w-full"
+        />
+
+        <label class="label">
+          <span class="label-text">Last name</span>
+        </label>
+        <input
+          type="text"
+          placeholder="McDoerson"
+          class="input input-bordered w-full"
+        />
+
+        <label class="label">
+          <span class="label-text">Email</span>
+        </label>
+        <input
+          type="email"
+          placeholder="you@domain.tld"
+          class="input input-bordered w-full"
+        />
+
+        <label class="label">
+          <span class="label-text">Company</span>
+        </label>
+        <input
+          type="email"
+          placeholder="Acme Corporation"
+          class="input input-bordered w-full"
+        />
       </div>
+      <div class="divider"></div>
+
+      {{/* What position do you hold? */}}
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">
+            What position do you hold at your company?
+          </span>
+        </label>
+        <input
+          type="text"
+          placeholder="Director of Procrastination"
+          class="input input-bordered w-full"
+        />
+      </div>
+      <div class="divider"></div>
+
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">
+            What are your team's current priorities?
+          </span>
+        </label>
+
+        <label class="label cursor-pointer">
+          <span class="label-text">Azure Hybrid or Cloud Migration</span>
+          <input type="checkbox" class="checkbox" />
+        </label>
+
+        <label class="label cursor-pointer">
+          <span class="label-text">Microsoft Office 365</span>
+          <input type="checkbox" class="checkbox" />
+        </label>
+
+        <label class="label cursor-pointer">
+          <span class="label-text">Security and Compliance</span>
+          <input type="checkbox" class="checkbox" />
+        </label>
+
+        <label class="label cursor-pointer">
+          <span class="label-text">Logs & Analytics</span>
+          <input type="checkbox" class="checkbox" />
+        </label>
+
+        <label class="label cursor-pointer">
+          <span class="label-text">Administraction Consulting</span>
+          <input type="checkbox" class="checkbox" />
+        </label>
+
+        <label class="label cursor-pointer">
+          <span class="label-text">Endpoint Management</span>
+          <input type="checkbox" class="checkbox" />
+        </label>
+      </div>
+      <div class="divider"></div>
+
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text"></span>
+            Given those priorities, briefly describe what you are looking to
+            achieve with us.
+          </span>
+        </label>
+        <textarea
+          class="textarea textarea-bordered h-24"
+          placeholder="We want to..."
+        ></textarea>
+      </div>
+      <div class="divider"></div>
+
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">
+            Roughly, when are you looking to get started?
+          </span>
+        </label>
+        <input
+          type="text"
+          placeholder="Yesterday"
+          class="input input-bordered w-full"
+        />
+      </div>
+      <div class="divider"></div>
+
+      <button class="btn">
+        Submit!
+      </button>
+
+
+      
     </div>
   </div>
 </div>

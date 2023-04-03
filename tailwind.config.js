@@ -30,7 +30,12 @@ module.exports = {
       'hover'
     ],
   },
+  // daisyui: {
+  //   themes: ["lofi"],
+  // },
   plugins: [
     require('tailwindcss-logical'),
-  ], // if we add forms, do it here
+    require("@tailwindcss/forms"),
+    require("daisyui"),
+  ],
 }
