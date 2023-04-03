@@ -1,9 +1,9 @@
 {{ define "main" }}
 
-<div id="all">
+<div id="all" x-data="{ submit: false }">
   <div class="h-24">{{ partial "nav.html" . }}</div>
   <div class="h-10 bg-gradient-to-b from-gray-100"></div>
-  <div class="flex justify-center"> 
+  <div class="flex justify-center">
     <div class="max-w-screen-sm flex flex-col p-5">
       {{ .Content }}
 
@@ -102,8 +102,8 @@
 
       <div class="form-control w-full">
         <label class="label">
-          <span class="label-text"></span>
-            Given those priorities, briefly describe what you are looking to
+          <span class="label-text">
+            Given your priorities, briefly describe what you are looking to
             achieve with us.
           </span>
         </label>
@@ -128,14 +128,35 @@
       </div>
       <div class="divider"></div>
 
-      <button class="btn">
+      <script>
+        function submitFormData() {
+          console.log("Submitting form...");
+        }
+      </script>
+      <label for="submit-modal" class="btn" x-on:click="submitFormData();">
         Submit!
-      </button>
-
-
-      
+      </label>
     </div>
   </div>
 </div>
+
+<input type="checkbox" id="submit-modal" class="modal-toggle" />
+<label for="submit-modal" class="modal cursor-pointer">
+  <label class="modal-box relative" for="">
+    <h3 class="text-lg font-bold">Thank you for filling out our form!</h3>
+    <p class="py-4">
+      We'll follow up with you shortly to ensure you make the most of our
+      partnership. If you're ready to begin, please book an appointment with us
+      to discuss your needs.
+    </p>
+    <a
+      class="btn float-right"
+      target="_blank"
+      href="https://outlook.office365.com/owa/calendar/Onboarding@NETORGFT6914316.onmicrosoft.com/bookings/"
+    >
+      Book now
+    </a>
+  </label>
+</label>
 
 {{ end }}
