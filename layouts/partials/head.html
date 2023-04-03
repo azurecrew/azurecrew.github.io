@@ -1,47 +1,73 @@
-<meta charset="utf-8">
-<meta name="robots" content="all,follow">
-<meta name="googlebot" content="index,follow,snippet,archive">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="robots" content="all,follow" />
+<meta name="googlebot" content="index,follow,snippet,archive" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 {{ $title_plain := .Title | markdownify | plainify }}
 <title>{{ $title_plain }}</title>
 <meta name="author" content='{{ .Param "author" }}' />
 {{ $keywords := .Site.Params.defaultKeywords | default (slice "" | first 0) }}
-{{ if isset .Params "tags" }}{{ range .Params.tags }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }}
-{{ if isset .Params "keywords" }}{{ range .Params.keywords }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }}
-{{ if gt (len $keywords) 0 }}
-<meta name="keywords" content='{{ delimit (uniq $keywords) ", " }}'>
-{{ end }}
-{{ $description_plain := default "Azure Crew" .Site.Params.Description | markdownify | plainify }}
-<meta name="description" content="{{ $description_plain }}">
+{{ if isset .Params "tags" }}{{ range .Params.tags }}{{ $keywords = $keywords |
+append . }}{{ end }}{{ end }} {{ if isset .Params "keywords" }}{{ range
+.Params.keywords }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }} {{
+if gt (len $keywords) 0 }}
+<meta name="keywords" content='{{ delimit (uniq $keywords) ", " }}' />
+{{ end }} {{ $description_plain := default "Azure Crew" .Site.Params.Description
+| markdownify | plainify }}
+<meta name="description" content="{{ $description_plain }}" />
 
 {{ hugo.Generator }}
 
 <!-- Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style> @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;400;700;900&display=swap'); </style>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+/><link
+  href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;400;700;900&display=swap");
+</style>
 
 <!-- Font Awesome CSS -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
+/>
 
 <!-- flikity -->
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media="screen">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+  media="screen"
+/>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <!-- CSS from PostCSS -->
 {{ $css := resources.Get "css/index.css" }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css">
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" />
 
 <!-- Custom stylesheet - for your changes -->
-<link href='{{ "css/custom.css" | relURL }}?{{ now.Unix }}' rel="stylesheet">
+<link href='{{ "css/custom.css" | relURL }}?{{ now.Unix }}' rel="stylesheet" />
 
 <!-- Ionicons -->
-<script type="module" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule=""
+  src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"
+></script>
 
 <!-- Alpine.js -->
 <!-- Alpine Plugins -->
-<script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
- 
+<script
+  defer
+  src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+></script>
+
 <!-- Alpine Core -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -49,10 +75,13 @@
 <script defer src="https://unpkg.com/@glidejs/glide"></script>
 
 <!-- Required Core Stylesheet -->
-<link rel="stylesheet" href="https://unpkg.com/@glidejs/glide/dist/css/glide.core.min.css">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@glidejs/glide/dist/css/glide.core.min.css"
+/>
 
 <!-- Optional Theme Stylesheet -->
-<link rel="stylesheet" href="https://unpkg.com/@glidejs/glide/dist/css/glide.theme.min.css">
-
-<!-- Typeform -->
-<script src="//embed.typeform.com/next/embed.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@glidejs/glide/dist/css/glide.theme.min.css"
+/>

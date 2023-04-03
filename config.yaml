@@ -1,27 +1,25 @@
 # baseURL: "https://azurecrew.com" # Change to your site URL and un-comment, of course
-baseURL: "https://azurecrew.github.io" # Change to your site URL and un-comment, of course
+# baseURL: "https://azurecrew.github.io" # Change to your site URL and un-comment, of course
 languageCode: en-us # Change if not appropriate for your site
 title: Azure Crew
 # theme: hugo-twcss
 
-summaryLength: 30 # words --- if you use summaries
+summaryLength: 15 # words --- if you use summaries
 FootnoteReturnLinkContents: "&#8593;"
 enableRobotsTXT: true
 
 pygmentsUseClasses: true
 
-
 Paginate: 5 # so five posts will appear on each page from "/posts"
 
 params:
-    # Domain: "example.com"
-    Author: "Your name goes here"
-    Description: "Your site description goes here"
-    Logo: "svg/azurecrewlogo.svg"
-    LogoBlack: "svg/azurecrewlogo-black.svg"
-    LogoWhite: "svg/azurecrewlogo-white.svg"
-    TypeformURL: "https://ae7og37tnte.typeform.com/to/pLK67nqh"
-
+  # Domain: "example.com"
+  Author: "Your name goes here"
+  Description: "Your site description goes here"
+  Logo: "svg/azurecrewlogo.svg"
+  LogoBlack: "svg/azurecrewlogo-black.svg"
+  LogoWhite: "svg/azurecrewlogo-white.svg"
+  TypeformURL: "https://ae7og37tnte.typeform.com/to/pLK67nqh"
 
 markup:
   # Reverting to Hugo-standard Goldmark parser and will handle typographical niceties
@@ -46,23 +44,27 @@ markup:
       guessSyntax: true
       noClasses: false
 menu:
-    main:
-      - identifier: "home"
-        name: "Home"
-        url: "/"
-        weight: 1
-      - identifier: "about"
-        name: "About"
-        title: "Whatever you call your 'about' page"
-        url: "/about/"
-        weight: 2
-      # - identifier: "blog"
-      #   name: "Blog"
-      #   title: "This site's posts"
-      #   url: "/posts/"
-      #   weight: 3
-      - identifier: "contact"
-        name: "Contact"
-        title: "This site's posts"
-        url: "/contact/"
-        weight: 4
+  main:
+    - identifier: "home"
+      name: "Home"
+      url: "/"
+      weight: 1
+    - identifier: "services"
+      name: "Services"
+      url: "/services/"
+      weight: 2
+    - identifier: "blog"
+      name: "Blog"
+      title: "This site's posts"
+      url: "/posts/"
+      weight: 3
+    - identifier: "about"
+      name: "About"
+      title: "Whatever you call your 'about' page"
+      url: "/about/"
+      weight: 4
+    - identifier: "contact"
+      name: "Contact"
+      title: "This site's posts"
+      url: "/contact/"
+      weight: 5

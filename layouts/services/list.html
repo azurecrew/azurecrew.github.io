@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<div class="h-24">{{ partial "nav.html" . }}</div>
+<div class="h-10 bg-gradient-to-b from-gray-100"></div>
+
+
+<div class="flex flex-col items-center p-8">
+  <div class="w-full max-w-screen-lg">
+    {{ .Content }}
+  </div>
+  <div class="flex flex-wrap justify-around gap-5 w-full max-w-screen-lg">
+    {{ range .Pages }}
+    <div class="card w-80 glass">
+      <figure>
+        {{$img := resources.Get "img/DSC_0365.jpg"}}
+        <img src="{{ $img.RelPermalink }}" alt="car!" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">{{ .Title }}</h2>
+        <p>{{ .Summary | truncate 70 }} <a class="hover:underline text-gray-500" href="{{ .RelPermalink }}">Read more</a></p>
+        <div class="card-actions justify-end">
+          <a href="/contact/"></a>
+            <button class="btn btn-primary">Inquire</button> 
+          </a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}

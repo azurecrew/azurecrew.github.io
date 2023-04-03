@@ -61,42 +61,27 @@
       </div>
       <div class="divider"></div>
 
+      <script>
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+        });
+      </script>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">
             What are your team's current priorities?
           </span>
         </label>
-
+        {{ with .Site.GetPage "/services" }} {{ range .Pages }}
         <label class="label cursor-pointer">
-          <span class="label-text">Azure Hybrid or Cloud Migration</span>
-          <input type="checkbox" class="checkbox" />
+          <span class="label-text">{{ .Title }}</span>
+          <input
+            type="checkbox"
+            class="checkbox"
+            x-bind:checked="params.{{ .Params.id }} == 'true'"
+          />
         </label>
-
-        <label class="label cursor-pointer">
-          <span class="label-text">Microsoft Office 365</span>
-          <input type="checkbox" class="checkbox" />
-        </label>
-
-        <label class="label cursor-pointer">
-          <span class="label-text">Security and Compliance</span>
-          <input type="checkbox" class="checkbox" />
-        </label>
-
-        <label class="label cursor-pointer">
-          <span class="label-text">Logs & Analytics</span>
-          <input type="checkbox" class="checkbox" />
-        </label>
-
-        <label class="label cursor-pointer">
-          <span class="label-text">Administraction Consulting</span>
-          <input type="checkbox" class="checkbox" />
-        </label>
-
-        <label class="label cursor-pointer">
-          <span class="label-text">Endpoint Management</span>
-          <input type="checkbox" class="checkbox" />
-        </label>
+        {{end}}{{end}}
       </div>
       <div class="divider"></div>
 
