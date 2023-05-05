@@ -9,7 +9,7 @@
     "prelim:twcss": "./node_modules/tailwindcss/lib/cli.js -i ./assets/css/tw.css -o ./assets/css/index.css --jit",
     "dev:twcssw": "./node_modules/tailwindcss/lib/cli.js -i ./assets/css/tw.css -o ./assets/css/index.css --jit -w",
     "devblah:hugo": "IPADDR=$(ip addr show dev eth0 | grep 'inet ' | cut -d/ -f1 | awk '{ print $2}'); hugo server --bind $IPADDR --baseURL=http://$IPADDR",
-    "dev:hugolocal": "IPADDR=0.0.0.0; hugo server --bind $IPADDR --baseURL=http://$IPADDR:1313",
+    "dev:hugolocal": "IPADDR=devboi.at.home; hugo server --bind $IPADDR --baseURL=http://$IPADDR:1313",
     "prod:twcss": "./node_modules/tailwindcss/lib/cli.js -i ./assets/css/tw.css -o ./assets/css/index.css --jit --minify",
     "prod:hugo": "hugo --gc --minify --baseURL=https://azurecrew.github.io"
   },
