@@ -20,6 +20,18 @@ params:
   LogoBlack: "svg/azurecrewlogo-black.svg"
   LogoWhite: "svg/azurecrewlogo-white.svg"
   TypeformURL: "https://ae7og37tnte.typeform.com/to/pLK67nqh"
+  date_format: "January 2, 2006"
+  widgets:
+    categories: true
+    tags: true
+
+taxonomies:
+  category: "categories"
+  tag: "tags"
+  author: "authors"
+
+theme:
+  - hugo-universal-theme
 
 markup:
   # Reverting to Hugo-standard Goldmark parser and will handle typographical niceties
@@ -56,7 +68,7 @@ menu:
     - identifier: "blog"
       name: "Blog"
       title: "This site's posts"
-      url: "/posts/"
+      url: "/blog/"
       weight: 3
     - identifier: "about"
       name: "About"
