@@ -4,22 +4,22 @@
     <div class="h-24">{{ partial "nav.html" . }}</div>
     <div class="h-10 bg-gradient-to-b from-gray-100"></div>
     <div class="flex justify-center">
-      <div class="max-w-screen-xl p-5 border border-red-600">
+      <div class="max-w-screen-xl p-5">
                 <div class="grid grid-cols-12">
                     <!-- *** LEFT COLUMN *** -->
         
-                    <div class="col-span-12 lg:col-span-9 border border-red-600" id="blog-listing-medium">
+                    <div class="col-span-12 lg:col-span-9 " id="blog-listing-medium">
         
                         {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.mainSections) }}
                         {{ range $paginator.Pages }}
-                        <section class="post pb-4">
+                        <section class="post p-4 pb-0 shadow rounded mb-5 mr-2">
                             <div class="grid grid-cols-12">
                                 <div class="col-span-12 md:col-span-4">
                                   <div class="image">
                                       <a href="{{ .Permalink }}">
                                           {{ if .Params.banner }}
                                           {{$img := resources.Get .Params.banner }}
-                                          <img src="{{ $img.RelPermalink }}" class="img-responsive" alt="">
+                                          <img src="{{ $img.RelPermalink }}" class="img-responsive rounded" alt="">
                                           {{ else }}
                                           <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="">
                                           {{ end }}
@@ -57,7 +57,7 @@
                                     </div>
                                     {{ if not .Site.Params.recent_posts.hide_summary }}
                                     <p class="intro">{{ .Summary }}</p>
-                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
+                                    <p class="float-right"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
                                     </p>
                                     {{ end }}
                                 </div>
@@ -65,7 +65,8 @@
                         </section>
                         {{ end }}
         
-                        <ul class="pager">
+                        {{/*  Pager  */}}
+                        <ul class="flex flex-row flex-nowrap justify-between w-full mb-10">
                             {{ if .Paginator.HasPrev }}
                             <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}">&larr; {{ i18n "newer" }}</a></li>
                             {{ else }}
@@ -79,6 +80,7 @@
                             {{ end }}
                         </ul>
                     </div>
+
                     <!-- /.col-md-9 -->
         
                     <!-- *** LEFT COLUMN END *** -->
@@ -86,12 +88,14 @@
                     <!-- *** RIGHT COLUMN ***
         _________________________________________________________ -->
         
-                    <div class="md:col-span-3 flex flex-row flex-wrap content-start">
+                    <div class="col-span-12 flex flex-row flex-wrap content-start justify-between lg:col-span-3">
         
                         <!-- *** MENUS AND WIDGETS *** -->
         
-                        {{ partial "sidebar.html" . }}
-        
+                        {{ partial "widgets/categories.html" . }}
+
+                        {{ partial "widgets/tags.html" . }}
+
                         <!-- *** MENUS AND FILTERS END *** -->
         
                     </div>

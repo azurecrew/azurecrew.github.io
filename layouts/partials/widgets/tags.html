@@ -7,11 +7,11 @@
         <h3 class="panel-title">{{ i18n "tagsTitle" }}</h3>
     </div>
 
-    <div class="panel-body border border-red-600">
-        <ul class="flex flex-wrap">
+    <div class="panel-body">
+        <ul class="flex flex-wrap max-w-sm">
             {{ $current := . }}
             {{ range $name, $items := .Site.Taxonomies.tags }}
-            <li class="border border-black px-2 py-1 m-1"{{ if eq $current.RelPermalink (printf "%s/%s/" ("tags" | relLangURL) ($name | urlize | lower)) }}class="active"{{ end }}>
+            <li class="border border-black rounded-sm px-2 py-1 m-1"{{ if eq $current.RelPermalink (printf "%s/%s/" ("tags" | relLangURL) ($name | urlize | lower)) }}class="active"{{ end }}>
                 <a href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}"><i class="fas fa-tags"></i> {{ $name }}</a>
             </li>
             {{ end }}
