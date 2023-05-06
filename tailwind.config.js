@@ -9,6 +9,9 @@ module.exports = {
   safelist: [],
   darkMode: 'media',
   theme: {
+    container: {
+      center: true,
+    },
     fill: theme => ({
       current: 'currentColor',
       white: theme('colors.white'),
