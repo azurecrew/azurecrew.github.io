@@ -10,7 +10,7 @@
         
                     <div class="col-span-12 lg:col-span-9 " id="blog-listing-medium">
         
-                        {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.mainSections) }}
+                        {{ $paginator := .Paginate .Data.Pages }}
                         {{ range $paginator.Pages }}
                         <section class="post p-4 pb-0 shadow rounded mb-5 mr-2">
                             <div class="grid grid-cols-12">

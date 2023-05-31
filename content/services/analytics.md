@@ -1,5 +1,5 @@
 ---
-title: "Logs & Analytics"
+title: "Cloud Monitoring"
 id: "logsanalytics"
 ---
 
