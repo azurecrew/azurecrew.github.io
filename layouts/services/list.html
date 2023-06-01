@@ -5,20 +5,25 @@
 
 <div class="flex flex-col items-center p-8">
   <div class="w-full max-w-screen-lg">{{ .Content }}</div>
-  <div class="flex flex-wrap justify-around gap-5 w-full max-w-screen-lg">
+  <div class="flex flex-wrap justify-between gap-5 w-full max-w-screen-lg">
     {{ range .Pages }}
-    <div class="card w-80 glass">
+    <div class="card glass max-w-xs">
+      {{/* Removing until we have good stock photos
       <figure>
         {{$img := resources.Get "img/DSC_0365.jpg"}}
         <img src="{{ $img.RelPermalink }}" alt="car!" />
       </figure>
+      */}}
       <div class="card-body">
         <h2 class="card-title">{{ .Title }}</h2>
         <p>
-          {{ .Summary | truncate 70 }}
-          <a class="hover:underline text-gray-500" href="{{ .RelPermalink }}"
-            >Read more</a
+          {{ .Summary | truncate 120 }}
+          <a
+            class="hover:underline block text-gray-500"
+            href="{{ .RelPermalink }}"
           >
+            Read more
+          </a>
         </p>
         <div class="card-actions justify-end">
           <a href="/contact/?{{ .Params.id }}=true">
