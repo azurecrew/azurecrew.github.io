@@ -1,0 +1,32 @@
+<div
+  class="w-full max-w-screen-lg flex flex-col justify-between sm:flex-row flex-wrap mb-5"
+>
+  {{ $count := .Get "count" }} {{ with .Site.GetPage "/services" }} {{ if not
+  $count }} {{ $count = .Pages | len}} {{end}} {{range first $count .Pages}}
+  <div class="card glass max-w-xs my-4">
+    {{/* Removing until we have good stock photos
+    <figure>
+      {{$img := resources.Get "img/DSC_0365.jpg"}}
+      <img src="{{ $img.RelPermalink }}" alt="car!" />
+    </figure>
+    */}}
+    <div class="card-body">
+      <h2 class="card-title">{{ .Title }}</h2>
+      <p>
+        {{ .Summary | truncate 120 }}
+        <a
+          class="hover:underline block text-gray-500"
+          href="{{ .RelPermalink }}"
+        >
+          Read more
+        </a>
+      </p>
+      <div class="card-actions justify-end">
+        <a href="/contact/?{{ .Params.id }}=true">
+          <button class="btn btn-primary">Inquire</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  {{ end }} {{ end }}
+</div>

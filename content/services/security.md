@@ -1,5 +1,5 @@
 ---
-title: "Security and Compliance"
+title: "Infrastructure & Security"
 id: "securitycompliance"
 ---
 

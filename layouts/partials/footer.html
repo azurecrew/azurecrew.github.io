@@ -4,12 +4,15 @@
   <div class="flex justify-center flex-row flex-wrap w-full max-w-screen-lg">
     {{/* Thank you blurb with logo */}}
     <div class="max-w-lg">
-      {{ $logo := resources.Get "svg/azurecrewlogo.svg" }}
-      <img
-        src="{{ $logo.RelPermalink }}"
-        alt="{{ .Title }} logo"
-        class="h-10 mb-4"
-      />
+      <div class="flex justify-between">
+        {{ $logo := resources.Get "svg/azurecrewlogo.svg" }}
+        <img
+          src="{{ $logo.RelPermalink }}"
+          alt="{{ .Title }} logo"
+          class="h-10 mb-4"
+        />
+      </div>
+
       <p class="text-sm">
         Thank you for visiting Azure Crew! We appreciate your time and interest
         in our Azure Cloud services.
