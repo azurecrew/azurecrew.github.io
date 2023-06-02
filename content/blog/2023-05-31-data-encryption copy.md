@@ -1,10 +1,10 @@
 +++
 title = "Data encryption and/or anonymization at ingestion (handling sensitive client/business data)"
 date = "2023-05-31"
-tags = ["golang", "programming", "theme", "hugo"]
-categories = ["programming","lorem","pseudo"]
+tags = ["cryptography", "secrets", "privacy"]
+categories = ["Security", "Compliance"]
 banner = "img/banners/banner-4.jpg"
-authors = ["Bobby Oustapidas"]
+authors = ["Azure Crew"]
 draft = false
 +++
 

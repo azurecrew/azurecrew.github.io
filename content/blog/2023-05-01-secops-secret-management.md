@@ -1,11 +1,11 @@
 +++
 title = "SecOps: distribution, storage, and rotation of secrets at run time"
 date = "2023-05-01"
-tags = ["theme"]
-categories = ["starting"]
+tags = ["secops", "cryptography", "secrets", "devops"]
+categories = ["Security"]
 description = "This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content."
 banner = "img/banners/banner-1.jpg"
-authors = ["Jane Doe"]
+authors = ["Azure Crew"]
 +++
 
 In the world of cybersecurity, SecOps (Security Operations) is an approach that combines security and operations teams to secure the organization's systems, data, and infrastructure. One of the key aspects of SecOps is managing secrets - sensitive information such as passwords, access keys, and certificates. In this blog, we will discuss the distribution, storage, and rotation of secrets at run time.
