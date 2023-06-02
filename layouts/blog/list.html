@@ -14,7 +14,7 @@
                         {{ range $paginator.Pages }}
                         <section class="post p-4 pb-0 shadow rounded mb-5 mr-2">
                             <div class="grid grid-cols-12">
-                                <div class="col-span-12 md:col-span-4">
+                                {{/*  <div class="col-span-12 md:col-span-4">
                                   <div class="image">
                                       <a href="{{ .Permalink }}">
                                           {{ if .Params.banner }}
@@ -25,9 +25,9 @@
                                           {{ end }}
                                       </a>
                                   </div>
-                                </div>
+                                </div>  */}}
 
-                                <div class="col-span-12 p-4 md:col-span-8 md:pt-0">
+                                  <div class="col-span-12 p-4 {{/*md:col-span-8 md:pt-0*/}}">  
                                     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                                     <div class="clearfix">
                                         <p class="author-category">
@@ -56,7 +56,7 @@
                                         {{ end }}
                                     </div>
                                     {{ if not .Site.Params.recent_posts.hide_summary }}
-                                    <p class="intro">{{ .Summary }}</p>
+                                    <p>{{ .Summary }}</p>
                                     <p class="float-right"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
                                     </p>
                                     {{ end }}
