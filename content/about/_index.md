@@ -24,9 +24,9 @@ Experience the difference of working with Azure Crew, where innovative solutions
 <div class="flex flex-wrap justify-around">
 {{< teamcard fullname="Bobby Oustapassidis" details="Super cool dude."
     photo="img/boustaps-profile.jpg">}}
-{{< teamcard fullname="Nicolas Sao" details="Super cool dude."
+{{< teamcard fullname="Nicolas Sao" details="Security Researcher & Appsec Engineer"
     photo="img/boustaps-profile.jpg">}}
-{{< teamcard fullname="Jonathan Zlotnik" details="Super cool dude."
+{{< teamcard fullname="Jonathan Zlotnik" details="Applied Cryptographer & Appsec Engineer"
     photo="img/boustaps-profile.jpg">}}
 </div>
 </div>
