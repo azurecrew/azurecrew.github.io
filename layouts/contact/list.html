@@ -1,126 +1,153 @@
 {{ define "main" }}
 
-<div id="all" x-data="{ submit: false }">
+<div id="all">
   <div class="h-24">{{ partial "nav.html" . }}</div>
   <div class="h-10 bg-gradient-to-b from-gray-100"></div>
   <div class="flex justify-center">
     <div class="max-w-screen-sm flex flex-col p-5">
       {{ .Content }}
 
-      <div class="form-control w-full">
-        <label class="label">
-          <span class="label-text">First name</span>
-        </label>
-        <input
-          type="text"
-          placeholder="Jane"
-          class="input input-bordered w-full"
-        />
-
-        <label class="label">
-          <span class="label-text">Last name</span>
-        </label>
-        <input
-          type="text"
-          placeholder="McDoerson"
-          class="input input-bordered w-full"
-        />
-
-        <label class="label">
-          <span class="label-text">Email</span>
-        </label>
-        <input
-          type="email"
-          placeholder="you@domain.tld"
-          class="input input-bordered w-full"
-        />
-
-        <label class="label">
-          <span class="label-text">Company</span>
-        </label>
-        <input
-          type="email"
-          placeholder="Acme Corporation"
-          class="input input-bordered w-full"
-        />
-      </div>
-      <div class="divider"></div>
-
-      {{/* What position do you hold? */}}
-      <div class="form-control w-full">
-        <label class="label">
-          <span class="label-text">
-            What position do you hold at your company?
-          </span>
-        </label>
-        <input
-          type="text"
-          placeholder="Director of Procrastination"
-          class="input input-bordered w-full"
-        />
-      </div>
-      <div class="divider"></div>
-
       <script>
-        const params = new Proxy(new URLSearchParams(window.location.search), {
-          get: (searchParams, prop) => searchParams.get(prop),
-        });
-      </script>
-      <div class="form-control w-full">
-        <label class="label">
-          <span class="label-text">
-            What are your team's current priorities?
-          </span>
-        </label>
-        {{ with .Site.GetPage "/services" }} {{ range .Pages }}
-        <label class="label cursor-pointer">
-          <span class="label-text">{{ .Title }}</span>
-          <input
-            type="checkbox"
-            class="checkbox"
-            x-bind:checked="params.{{ .Params.id }} == 'true'"
-          />
-        </label>
-        {{end}}{{end}}
-      </div>
-      <div class="divider"></div>
+        function contactForm() {
+          return {
+            formData: {
+              first_name: '',
+              last_name: '',
+              email: '',
+              company: '',
+              description: '',
+              priorities: {
+              },
+              start_estimate: ''
+            },
+            submitDisabled: true,
+            message: '',
+            loading: false,
+            buttonLabel: 'Submit!',
+            isEmail(email) {
+              var re = /\S+@\S+\.\S+/;
+              return re.test(email);
+            },
+            submitFormData() {
+              this.buttonLabel = 'Submitting...';
+              this.loading = true;
 
-      <div class="form-control w-full">
-        <label class="label">
-          <span class="label-text">
-            Given your priorities, briefly describe what you are looking to
-            achieve with us.
-          </span>
-        </label>
-        <textarea
-          class="textarea textarea-bordered h-24"
-          placeholder="We want to..."
-        ></textarea>
-      </div>
-      <div class="divider"></div>
-
-      <div class="form-control w-full">
-        <label class="label">
-          <span class="label-text">
-            Roughly, when are you looking to get started?
-          </span>
-        </label>
-        <input
-          type="text"
-          placeholder="Yesterday"
-          class="input input-bordered w-full"
-        />
-      </div>
-      <div class="divider"></div>
-
-      <script>
-        function submitFormData() {
-          console.log("Submitting form...");
+              this.message = '';
+              fetch('https://azurecrew.azurewebsites.net/api/SubmitInquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(this.formData)
+              })
+                .then(() => {
+                  this.message = 'Form sucessfully submitted!'
+                })
+                .catch(() => {
+                  this.message = 'Ooops! Something went wrong!'
+                })
+                .finally(() => {
+                  this.loading = false;
+                  this.buttonLabel = 'Submit!'
+                })
+            }
+          }
         }
       </script>
-      <label for="submit-modal" class="btn" x-on:click="submitFormData();">
-        Submit!
-      </label>
+      <form x-data="contactForm()" @submit.prevent="">
+        {{/* https://technotrampoline.com/articles/building-an-ajax-form-with-alpinejs/ */}}
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">First name *</span>
+          </label>
+          <input required type="text" x-model="formData.first_name" placeholder="Jane"
+            class="input input-bordered w-full" />
+
+          <label class="label">
+            <span class="label-text">Last name *</span>
+          </label>
+          <input required type="text" x-model="formData.last_name" placeholder="McDoerson"
+            class="input input-bordered w-full" />
+
+          <label class="label">
+            <span class="label-text">Email *</span>
+          </label>
+          <input required type="email" x-model="formData.email" placeholder="you@domain.tld"
+            class="input input-bordered w-full" />
+
+          <label class="label">
+            <span class="label-text">Company</span>
+          </label>
+          <input type="text" x-model="formData.company" placeholder="Acme Corporation"
+            class="input input-bordered w-full" />
+        </div>
+        <div class="divider"></div>
+
+        {{/* What position do you hold? */}}
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">
+              What position do you hold at your company?
+            </span>
+          </label>
+          <input type="text" x-model="formData.role" placeholder="Director of Procrastination"
+            class="input input-bordered w-full" />
+        </div>
+        <div class="divider"></div>
+
+        <script>
+          const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+          });
+        </script>
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">
+              What are your team's current priorities? *
+            </span>
+          </label>
+          {{ with .Site.GetPage "/services" }} {{ range .Pages }}
+          <label class="label cursor-pointer">
+            <span class="label-text">{{ .Title }}</span>
+            <input type="checkbox" class="checkbox" x-model="formData.priorities.{{ .Params.id }}"
+              x-bind:checked="params.{{ .Params.id }} == 'true'" />
+          </label>
+          {{end}}{{end}}
+        </div>
+        <div class="divider"></div>
+
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">
+              Given your priorities, briefly describe what you are looking to
+              achieve with us. *
+            </span>
+          </label>
+          <textarea required x-model="formData.description" class="textarea textarea-bordered h-24"
+            placeholder="We want to..."></textarea>
+        </div>
+        <div class="divider"></div>
+
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">
+              Roughly, when are you looking to get started?
+            </span>
+          </label>
+          <input type="date" x-model="formData.start_estimate" class="input input-bordered w-full" />
+        </div>
+
+        <div class="divider"></div>
+        <div class="text-xs mb-2">Required *</div>
+        <label for="submit-modal" class="btn" :class="(
+          formData.first_name.length === 0 || formData.last_name.length === 0 || 
+          formData.email.length === 0 || !isEmail(formData.email) ||
+          formData.description.length === 0 ||
+          Object.keys(formData.priorities).length === 0 || Object.values(formData.priorities).every((v) => v === false)
+          ) || loading ? 'btn-disabled' : '' " x-text="buttonLabel" x-on:click="submitFormData();">
+          Submit!
+        </label>
+
+      </form>
+
     </div>
   </div>
 </div>
@@ -134,11 +161,8 @@
       partnership. If you're ready to begin, please book an appointment with us
       to discuss your needs.
     </p>
-    <a
-      class="btn float-right"
-      target="_blank"
-      href="https://outlook.office365.com/owa/calendar/Onboarding@NETORGFT6914316.onmicrosoft.com/bookings/"
-    >
+    <a class="btn float-right" target="_blank"
+      href="https://outlook.office365.com/owa/calendar/Onboarding@NETORGFT6914316.onmicrosoft.com/bookings/">
       Book now
     </a>
   </label>
