@@ -1,23 +1,16 @@
 {{/* Navbar */}}
 <div x-data="{ open: false }">
   <div class="flex justify-center">
-    <nav
-      class="absolute w-full max-w-screen-lg p-8 z-[900] flex flex-row justify-between items-center"
-    >
+    <nav class="absolute w-full max-w-screen-lg p-8 z-[900] flex flex-row justify-between items-center">
       <a href="/" class="cursor-pointer">
         {{ $logoWhite := resources.Get .Site.Params.logowhite}} {{ $logoBlack :=
         resources.Get .Site.Params.logoblack }} {{/* {{ .Site.Params.logo }}
         */}}
-        <img
-          class="h-10"
-          src="{{cond (.IsHome) $logoWhite.RelPermalink $logoBlack.RelPermalink }}"
-          alt="{{ .Title }} logo"
-        />
+        <img class="h-10" src="{{cond (.IsHome) $logoWhite.RelPermalink $logoBlack.RelPermalink }}"
+          alt="{{ .Title }} logo" />
       </a>
 
-      <div
-        class='flex flex-row items-center {{ cond (.IsHome) "text-white" "text-black" }}'
-      >
+      <div class='flex flex-row items-center {{ cond (.IsHome) "text-white" "text-black" }}'>
         {{ $current := .}} {{ range .Site.Menus.main.ByWeight }} {{ $topLevel :=
         replace .URL "/" "" }} {{ $active := "" }} {{ if eq
         $current.RelPermalink .URL }} {{ $active = "underline" }} {{ end }} {{
@@ -32,15 +25,11 @@
         </div>
 
         {{ end }} {{/* Search Button */}}
-        <div class="ml-5 mr-5" style="line-height: 0">
+        {{/* <div class="ml-5 mr-5" style="line-height: 0">
           <ion-icon class="text-3xl" name="search-outline"></ion-icon>
-        </div>
+        </div> */}}
         {{/* Sidebar Button */}}
-        <div
-          x-on:click="open = ! open"
-          class="lg:hidden"
-          style="line-height: 0"
-        >
+        <div x-on:click="open = ! open" class="lg:hidden" style="line-height: 0">
           <ion-icon class="text-3xl" name="menu-sharp"></ion-icon>
         </div>
       </div>
@@ -51,18 +40,11 @@
   <div class="flex justify-end">
     {{/* Sidebar */}}
     <aside class="fixed z-[9999]">
-      <div
-        class="flex flex-col py-5 bg-white h-screen transition-all duration-200"
-        :class="open?'w-48 opacity-100 px-5':'w-0 opacity-100 px-0'"
-      >
+      <div class="flex flex-col py-5 bg-white h-screen transition-all duration-200"
+        :class="open?'w-48 opacity-100 px-5':'w-0 opacity-100 px-0'">
         {{/* Close button */}}
-        <ion-icon
-          x-show="open"
-          x-on:click="open = ! open"
-          class="self-end"
-          style="font-size: 24px"
-          name="close-sharp"
-        ></ion-icon>
+        <ion-icon x-show="open" x-on:click="open = ! open" class="self-end" style="font-size: 24px"
+          name="close-sharp"></ion-icon>
         {{/* Nav items */}} {{ $current := .}} {{ range
         .Site.Menus.main.ByWeight }} {{ $topLevel := replace .URL "/" "" }} {{
         $active := "" }} {{ if eq $current.RelPermalink .URL }} {{ $active =
@@ -72,10 +54,7 @@
         {{ range (split .URL "/") }} {{ if eq "blog" . }} {{ $active =
         "underline" }} {{ end }} {{ end }} {{ end }}
 
-        <div
-          x-show="open"
-          class="{{ $active }} underline-offset-2 mb-4 font-light text-lg"
-        >
+        <div x-show="open" class="{{ $active }} underline-offset-2 mb-4 font-light text-lg">
           <a href="{{ .URL }}" style="line-height: 0">{{ .Name }}</a>
         </div>
 
