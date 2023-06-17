@@ -4,6 +4,15 @@ languageCode: en-us # Change if not appropriate for your site
 title: Azure Crew
 # theme: hugo-twcss
 
+module:
+  mounts:
+    - source: static
+      target: static
+    - source: assets
+      target: assets
+    - source: static
+      target: assets
+
 summaryLength: 15 # words --- if you use summaries
 FootnoteReturnLinkContents: "&#8593;"
 enableRobotsTXT: true

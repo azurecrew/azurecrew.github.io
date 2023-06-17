@@ -38,11 +38,6 @@ Trust Azure Crew for reliable, efficient, and cost-effective solutions that driv
 
 You're not only partnering with Azure Crew, but also with industry giants Microsoft and Pax8. This powerful alliance ensures that you receive the highest level of expertise and support for Microsoft cloud services, including Azure and Microsoft Office 365. Benefit from our deep knowledge of these platforms, combined with the resources and innovation provided by Microsoft and Pax8, to drive your business forward and stay ahead of the competition.
 
-<div class="my-12 flex justify-around items-center">
-      <img alt="microsoft partner logo" class="h-20 mr-5 rounded shadow-md" src="/img/microsoft-partner.jpg" />
-      <span class="font-semibold text-2xl">&</span>
-      <img alt="pax8 banner logo" class="h-20 mr-5 rounded shadow-md" src="/img/pax8.jpg" />
-    </div>
+{{<partnerlogos>}}
 
-</div>
 <!-- END Partnering with us -->
