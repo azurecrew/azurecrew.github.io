@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<div id="all" x-data="{ submit: false }">
+<div id="all">
   <div class="h-24">{{ partial "nav.html" . }}</div>
   <div class="h-10 bg-gradient-to-b from-gray-100"></div>
   <div class="flex justify-center">
@@ -20,12 +20,18 @@
               },
               start_estimate: ''
             },
+            submitDisabled: true,
             message: '',
             loading: false,
             buttonLabel: 'Submit!',
+            isEmail(email) {
+              var re = /\S+@\S+\.\S+/;
+              return re.test(email);
+            },
             submitFormData() {
               this.buttonLabel = 'Submitting...';
               this.loading = true;
+
               this.message = '';
               fetch('https://azurecrew.azurewebsites.net/api/SubmitInquiry', {
                 method: 'POST',
@@ -50,19 +56,19 @@
         {{/* https://technotrampoline.com/articles/building-an-ajax-form-with-alpinejs/ */}}
         <div class="form-control w-full">
           <label class="label">
-            <span class="label-text">First name</span>
+            <span class="label-text">First name *</span>
           </label>
           <input required type="text" x-model="formData.first_name" placeholder="Jane"
             class="input input-bordered w-full" />
 
           <label class="label">
-            <span class="label-text">Last name</span>
+            <span class="label-text">Last name *</span>
           </label>
           <input required type="text" x-model="formData.last_name" placeholder="McDoerson"
             class="input input-bordered w-full" />
 
           <label class="label">
-            <span class="label-text">Email</span>
+            <span class="label-text">Email *</span>
           </label>
           <input required type="email" x-model="formData.email" placeholder="you@domain.tld"
             class="input input-bordered w-full" />
@@ -95,7 +101,7 @@
         <div class="form-control w-full">
           <label class="label">
             <span class="label-text">
-              What are your team's current priorities?
+              What are your team's current priorities? *
             </span>
           </label>
           {{ with .Site.GetPage "/services" }} {{ range .Pages }}
@@ -112,7 +118,7 @@
           <label class="label">
             <span class="label-text">
               Given your priorities, briefly describe what you are looking to
-              achieve with us.
+              achieve with us. *
             </span>
           </label>
           <textarea required x-model="formData.description" class="textarea textarea-bordered h-24"
@@ -130,10 +136,16 @@
         </div>
 
         <div class="divider"></div>
-        <label for="submit-modal" class="btn" :class="loading ? 'btn-disabled' : '' " x-text="buttonLabel"
-          x-on:click="submitFormData();">
+        <div class="text-xs mb-2">Required *</div>
+        <label for="submit-modal" class="btn" :class="(
+          formData.first_name.length === 0 || formData.last_name.length === 0 || 
+          formData.email.length === 0 || !isEmail(formData.email) ||
+          formData.description.length === 0 ||
+          Object.keys(formData.priorities).length === 0 || Object.values(formData.priorities).every((v) => v === false)
+          ) || loading ? 'btn-disabled' : '' " x-text="buttonLabel" x-on:click="submitFormData();">
           Submit!
         </label>
+
       </form>
 
     </div>
