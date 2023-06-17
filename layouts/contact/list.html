@@ -6,43 +6,27 @@
   <div class="flex justify-center">
     <div class="max-w-screen-sm flex flex-col p-5">
       {{ .Content }}
-
+      {{/* https://technotrampoline.com/articles/building-an-ajax-form-with-alpinejs/ */}}
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">First name</span>
         </label>
-        <input
-          type="text"
-          placeholder="Jane"
-          class="input input-bordered w-full"
-        />
+        <input type="text" placeholder="Jane" class="input input-bordered w-full" />
 
         <label class="label">
           <span class="label-text">Last name</span>
         </label>
-        <input
-          type="text"
-          placeholder="McDoerson"
-          class="input input-bordered w-full"
-        />
+        <input type="text" placeholder="McDoerson" class="input input-bordered w-full" />
 
         <label class="label">
           <span class="label-text">Email</span>
         </label>
-        <input
-          type="email"
-          placeholder="you@domain.tld"
-          class="input input-bordered w-full"
-        />
+        <input type="email" placeholder="you@domain.tld" class="input input-bordered w-full" />
 
         <label class="label">
           <span class="label-text">Company</span>
         </label>
-        <input
-          type="email"
-          placeholder="Acme Corporation"
-          class="input input-bordered w-full"
-        />
+        <input type="email" placeholder="Acme Corporation" class="input input-bordered w-full" />
       </div>
       <div class="divider"></div>
 
@@ -53,11 +37,7 @@
             What position do you hold at your company?
           </span>
         </label>
-        <input
-          type="text"
-          placeholder="Director of Procrastination"
-          class="input input-bordered w-full"
-        />
+        <input type="text" placeholder="Director of Procrastination" class="input input-bordered w-full" />
       </div>
       <div class="divider"></div>
 
@@ -75,11 +55,7 @@
         {{ with .Site.GetPage "/services" }} {{ range .Pages }}
         <label class="label cursor-pointer">
           <span class="label-text">{{ .Title }}</span>
-          <input
-            type="checkbox"
-            class="checkbox"
-            x-bind:checked="params.{{ .Params.id }} == 'true'"
-          />
+          <input type="checkbox" class="checkbox" x-bind:checked="params.{{ .Params.id }} == 'true'" />
         </label>
         {{end}}{{end}}
       </div>
@@ -92,10 +68,7 @@
             achieve with us.
           </span>
         </label>
-        <textarea
-          class="textarea textarea-bordered h-24"
-          placeholder="We want to..."
-        ></textarea>
+        <textarea class="textarea textarea-bordered h-24" placeholder="We want to..."></textarea>
       </div>
       <div class="divider"></div>
 
@@ -105,11 +78,7 @@
             Roughly, when are you looking to get started?
           </span>
         </label>
-        <input
-          type="text"
-          placeholder="Yesterday"
-          class="input input-bordered w-full"
-        />
+        <input type="text" placeholder="Yesterday" class="input input-bordered w-full" />
       </div>
       <div class="divider"></div>
 
@@ -134,11 +103,8 @@
       partnership. If you're ready to begin, please book an appointment with us
       to discuss your needs.
     </p>
-    <a
-      class="btn float-right"
-      target="_blank"
-      href="https://outlook.office365.com/owa/calendar/Onboarding@NETORGFT6914316.onmicrosoft.com/bookings/"
-    >
+    <a class="btn float-right" target="_blank"
+      href="https://outlook.office365.com/owa/calendar/Onboarding@NETORGFT6914316.onmicrosoft.com/bookings/">
       Book now
     </a>
   </label>
