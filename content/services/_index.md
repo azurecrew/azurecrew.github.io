@@ -12,7 +12,7 @@ to the next level with our cutting-edge IT services.
 ## Microsoft Cloud Solution Provider
 
 <div class="float-right">
-  <img class="w-40 m-2 mt-0 sm:m-5 sm:w-56" src="images/microsoft-partner.png" />
+  <img alt="microsoft partner logo" class="w-40 m-2 mt-0 sm:m-5 sm:w-56" src="images/microsoft-partner.png" />
 </div>
 
 As a Microsoft CSP (Cloud Solution Provider) provider, we have a direct
