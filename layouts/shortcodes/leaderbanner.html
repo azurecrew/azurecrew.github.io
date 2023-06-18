@@ -1,14 +1,9 @@
 {{ $leaderBG := resources.Get "img/DSC_0365.jpg" | images.Filter
 (images.GaussianBlur 20) (images.Brightness -10) }}
-<div
-  id="leader-banner"
-  style='background-image: url("{{ $leaderBG.RelPermalink }}");'
-  class="bg-fixed bg-cover bg-center text-white flex justify-center"
->
+<div id="leader-banner" style='background-image: url("{{ $leaderBG.RelPermalink }}");'
+  class="bg-fixed bg-cover bg-center text-white flex justify-center">
   {{/* Leader content container */}}
-  <div
-    class="p-5 w-full max-w-screen-lg flex flex-wrap items-center justify-between"
-  >
+  <div class="p-5 w-full max-w-screen-lg flex flex-wrap items-center justify-between">
     {{/* Leader blurb */}}
     <div class="max-w-xl my-6">
       <h2 class="text-2xl">
@@ -33,11 +28,9 @@
       <div class="flex h-full">
         {{/* image */}} {{ $bobbyProfile := resources.Get
         "img/boustaps-profile.jpg"}} {{ $bobbyProfile := $bobbyProfile.Crop
-        "250x250"}}
-        <div
-          style='background-image: url("{{ $bobbyProfile.RelPermalink }}");'
-          class="flex-shrink-0 h-20 w-20 mr-5 rounded-full bg-cover"
-        ></div>
+        "80x80"}}
+        <div style='background-image: url("{{ $bobbyProfile.RelPermalink }}");'
+          class="flex-shrink-0 h-20 w-20 mr-5 rounded-full bg-cover"></div>
         {{/* text */}}
         <div class="flex-shrink-0">
           <div class="font-bold">Bobby Oustapassidis</div>
@@ -49,10 +42,8 @@
       </div>
 
       {{/* Meet the team button */}}
-      <a
-        href="/about"
-        class="w-80 self-center my-3 py-3 pl-14 pr-4 rounded-full bg-white text-black hover:bg-black hover:text-white flex flex-row items-center justify-center"
-      >
+      <a href="/about"
+        class="w-80 self-center my-3 py-3 pl-14 pr-4 rounded-full bg-white text-black hover:bg-black hover:text-white flex flex-row items-center justify-center">
         <span class="mr-8 pt-1 text-sm font-semibold">Meet the team</span>
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </a>
