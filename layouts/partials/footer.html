@@ -6,11 +6,7 @@
     <div class="max-w-lg">
       <div class="flex justify-between">
         {{ $logo := resources.Get "svg/azurecrewlogo.svg" }}
-        <img
-          src="{{ $logo.RelPermalink }}"
-          alt="{{ .Title }} logo"
-          class="h-10 mb-4"
-        />
+        <img src="{{ $logo.RelPermalink }}" alt="{{ .Title }} logo" class="h-10 mb-4" />
       </div>
 
       <p class="text-sm">
@@ -30,14 +26,19 @@
     {{/* Contact us */}}
     <div class="lg:flex lg:flex-col">
       <h3 class="mt-5 mb-2 max-md:hidden md:block">Contact info</h3>
-      <div>
-        {{/*  <div class="flex items-center">
+      <div x-data="">
+        {{/* <div class="flex items-center">
           <ion-icon class="mr-2" name="call"></ion-icon>
           <span>+1 (514) 999-9999</span>
-        </div>  */}}
-        <div class="flex items-center">
+        </div> */}}
+        <script>
+          function mailto() {
+            window.location.href = "mailto:info" + "@" + "azurecrew.com";
+          }
+        </script>
+        <div class="flex items-center cursor-pointer" x-on:click="mailto()">
           <ion-icon class="mr-2" name="mail"></ion-icon>
-          <span>info@azurecrew.com</span>
+          <img alt="info at azurecrew.com" width="150px" src="/img/infoatazurecrew.png" />
         </div>
       </div>
     </div>
