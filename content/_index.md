@@ -16,7 +16,7 @@ Trust Azure Crew for reliable, efficient, and cost-effective solutions that driv
 
 <!-- More services button -->
 <div class="flex justify-center p-10">
-<a href="/services/">
+<a href="/services/" class="no-underline">
     <div
     class="max-w-xs self-center mb-3 py-3 pl-14 pr-4 rounded-full border border-black bg-white text-black hover:bg-black hover:text-white flex flex-row items-center justify-center"
     >

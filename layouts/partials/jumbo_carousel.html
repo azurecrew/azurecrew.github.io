@@ -19,29 +19,29 @@
     <div class="jumbotron-carousel">
         {{ range sort .Site.Data.carousel "weight" }}
         <div class="jumbotron-carousel-cell">
-                <div class="flex flex-col h-full w-full justify-center items-center text-center bg-no-repeat bg-cover"
-                    style="background-image: url('{{ .image }}')">
-                    <h1 class="p-5 text-white text-5xl font-bold  max-lg:max-w-lg">{{ .title | safeHTML }}</h1>
-                    <div class="mb-14 text-white text-lg font-normal max-sm:hidden">{{ .description | safeHTML }}</div>
-                    {{ if .href }}
-                    <a href="{{ .href }}" target="_blank" title="{{ .title | safeHTML }}">
+            <div class="flex flex-col h-full w-full justify-center items-center text-center bg-no-repeat bg-cover"
+                style="background-image: url('{{ .image }}')">
+                <h1 class="p-5 text-white text-5xl font-bold  max-lg:max-w-lg">{{ .title | safeHTML }}</h1>
+                <div class="mb-14 text-white text-lg font-normal max-sm:hidden">{{ .description | safeHTML }}</div>
+                {{ if .href }}
+                <a class="no-underline" href="{{ .href }}" target="_blank" title="{{ .title | safeHTML }}">
                     {{ end }}
-                        <div class="
+                    <div class="
                             py-3 pl-14 pr-4 rounded-full 
                             bg-white  text-black hover:bg-black hover:text-white
                             flex flex-row items-center justify-center
                         ">
-                            <span class="pt-1 mr-8 text-sm font-semibold">Read more</span>
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
-                        </div>
+                        <span class="pt-1 mr-8 text-sm font-semibold">Read more</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </div>
                     {{ if .href }}
-                    </a> 
-                    {{ end }}
-                </div>
+                </a>
+                {{ end }}
+            </div>
         </div>
         {{ end }}
     </div>
-    
+
 </section>
 
 <script>
@@ -58,4 +58,3 @@
         // options
     });
 </script>
-

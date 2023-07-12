@@ -6,4 +6,4 @@ weight: 1
 picture: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
 ---
 
-Super cool dude
+Meet Bobby Oustapassidis, the CEO of Azure Crew. With almost two decades of experience in the IT industry, Bobby is a seasoned professional with a passion for Cloud Computing. His extensive experience in workstation architecture, system administration, and Azure administration has made him a go-to expert for businesses looking to streamline their operations and secure their data. Bobby's resourceful and efficient approach to problem-solving, combined with his commitment to quality and security compliance, has helped him build a team of experts at Azure Crew who are dedicated to providing top-notch cloud solutions to clients.
