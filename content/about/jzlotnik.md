@@ -6,7 +6,7 @@ picture: "/img/jon-profile.jpg"
 id: "jzlotnik"
 ---
 
-Meet Jon Zlotnik, an expert in cryptography, distributed systems, and development security operations.
+Meet Jon Zlotnik, an expert in cryptography, distributed systems, and securing software development operations.
 
 Jon's recent industry work includes developing core blockchain protocols and other cryptographic systems, finding and mitigating critical security vulnerabilities, streamlining identity management, and extending enterprise security tooling.
 
