@@ -1,6 +1,6 @@
 ---
 title: "Jon Zlotnik"
-summary: "Solution Architect"
+summary: "DevSecOps Consultant"
 weight: 3
 picture: "/img/jon-profile.jpg"
 id: "jzlotnik"

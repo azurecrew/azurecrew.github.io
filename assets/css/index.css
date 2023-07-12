@@ -4136,9 +4136,9 @@ a {
   line-height: 1.75rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-3xl {
@@ -4149,11 +4149,6 @@ a {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .font-semibold {
@@ -4174,26 +4169,6 @@ a {
 
 .italic {
   font-style: italic;
-}
-
-.leading-loose {
-  line-height: 2;
-}
-
-.leading-relaxed {
-  line-height: 1.625;
-}
-
-.leading-6 {
-  line-height: 1.5rem;
-}
-
-.leading-10 {
-  line-height: 2.5rem;
-}
-
-.leading-normal {
-  line-height: 1.5;
 }
 
 .leading-snug {
