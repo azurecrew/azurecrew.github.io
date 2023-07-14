@@ -35,10 +35,18 @@
           function mailto() {
             window.location.href = "mailto:info" + "@" + "azurecrew.com";
           }
+          function callPhone() {
+            window.location.href = "te" + "l:" + "18" + "00270" + "8089";
+          }
         </script>
         <div class="flex items-center cursor-pointer" x-on:click="mailto()">
           <ion-icon class="mr-2" name="mail"></ion-icon>
           <img alt="info at azurecrew.com" width="150px" src="/img/infoatazurecrew.png" />
+        </div>
+        <div class="h-1"> </div>
+        <div class="flex items-center cursor-pointer" x-on:click="callPhone()">
+          <ion-icon class="mr-2" name="call"></ion-icon>
+          <span>1-800-270-8089</span>
         </div>
       </div>
     </div>
