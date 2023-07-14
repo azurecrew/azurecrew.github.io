@@ -1,5 +1,5 @@
-{{ $leaderBG := resources.Get "img/DSC_0365.jpg" | images.Filter
-(images.GaussianBlur 20) (images.Brightness -10) }}
+{{ $leaderBG := resources.Get "/img/banners/banner-mtl.jpg" | images.Filter
+(images.GaussianBlur 20) (images.Brightness -10) (images.Grayscale) }}
 <div id="leader-banner" style='background-image: url("{{ $leaderBG.RelPermalink }}");'
   class="bg-fixed bg-cover bg-center text-white flex justify-center">
   {{/* Leader content container */}}
@@ -27,7 +27,7 @@
       {{/* Leader profile card */}}
       <div class="flex h-full">
         {{/* image */}} {{ $bobbyProfile := resources.Get
-        "img/boustaps-profile.jpg"}} {{ $bobbyProfile := $bobbyProfile.Resize
+        "/img/boustaps-profile.jpg"}} {{ $bobbyProfile := $bobbyProfile.Resize
         "80x80"}}
         <div style='background-image: url("{{ $bobbyProfile.RelPermalink }}");'
           class="flex-shrink-0 h-20 w-20 mr-5 rounded-full bg-cover"></div>

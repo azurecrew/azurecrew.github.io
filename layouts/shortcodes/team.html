@@ -2,8 +2,9 @@
     {{ $count := .Get "count" }} {{ with .Site.GetPage "/about" }} {{ if not
     $count }} {{ $count = .Pages | len}} {{end}} {{range first $count .Pages}}
     <div class="card card-compact sm:card-side shadow-xl my-4">
-        <figure class="max-w-xs">
-            <img src="{{ .Params.picture }}" alt="Profile picture of {{ .Title }}" />
+        <figure class="w-[320px] flex-shrink-0">
+            <img class="w-[320px]" width="320px" height="320px" src="{{ .Params.picture }}"
+                alt="Profile picture of {{ .Title }}" />
         </figure>
         <div class="card-body">
             <div class="card-title">{{ .Title }}</div>
@@ -13,14 +14,17 @@
             <div class="[&>ul]:list-disc [&>p]:mb-2 text-sm flex-grow">
                 {{ .Content }}
             </div>
-            {{/* <a class="hover:underline block text-gray-500" href="{{ .RelPermalink }}">
+            {{/*
+            <a class="hover:underline block text-gray-500" href="{{ .RelPermalink }}">
                 Read more
-            </a> */}}
-            {{/* <div class="card-actions self-end text-gray-600 text-2xl mt-5">
+            </a>
+            */}} {{/*
+            <div class="card-actions self-end text-gray-600 text-2xl mt-5">
                 <ion-icon class="mx-3" name="logo-linkedin"></ion-icon>
                 <ion-icon class="mx-3" name="logo-twitter"></ion-icon>
                 <ion-icon class="mx-3" name="logo-github"></ion-icon>
-            </div> */}}
+            </div>
+            */}}
         </div>
     </div>
     {{ end }} {{ end }}
