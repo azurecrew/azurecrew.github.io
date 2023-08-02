@@ -3,7 +3,7 @@ title: "Nicolas Sao"
 summary: "Cloud Security Architect"
 id: "nsao"
 weight: 2
-picture: "/img/nsao-profile.jpg"
+picture: "/img/nsao-profile2.jpg"
 ---
 
 Meet N. Sao, a seasoned Cloud Security Architect with 19 years of expertise in the industry.
