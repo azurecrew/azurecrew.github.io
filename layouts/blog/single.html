@@ -16,7 +16,7 @@
               {{ range $index, $author := .Params.authors }}
                 {{ if $index }},{{ end }}
                 <a
-                  href=" {{ (printf '%s/%s' ('authors' | relLangURL) ($author | urlize)) }} "
+                  href=" {{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }} "
                 >
                   {{ $author }}
                 </a>
