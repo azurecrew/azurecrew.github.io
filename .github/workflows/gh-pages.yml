@@ -23,6 +23,7 @@ jobs:
             - name: Build
               run: |
                   npm install
+                  npm run format:check
                   npm run build
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
