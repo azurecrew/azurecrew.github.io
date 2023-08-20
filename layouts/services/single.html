@@ -1,15 +1,14 @@
 {{ define "main" }}
-<div class="h-24">{{ partial "nav.html" . }}</div>
-<div class="h-10 bg-gradient-to-b from-gray-100"></div>
+  <div class="h-24">{{ partial "nav.html" . }}</div>
+  <div class="h-10 bg-gradient-to-b from-gray-100"></div>
 
-<div class="container max-w-screen-sm p-5">
-  <h2 class="card-title">{{ .Title }}</h2>
-  <p>{{ .Content }}</p>
-  <div class="w-full flex justify-end">
-    <a href="/contact/?{{ .Params.id }}=true">
-      <button class="btn btn-primary">Inquire</button>
-    </a>
+  <div class="container max-w-screen-sm p-5">
+    <h2 class="card-title">{{ .Title }}</h2>
+    <p>{{ .Content }}</p>
+    <div class="w-full flex justify-end">
+      <a href="/contact/?{{ .Params.id }}=true">
+        <button class="btn btn-primary">Inquire</button>
+      </a>
+    </div>
   </div>
-</div>
-
 {{ end }}

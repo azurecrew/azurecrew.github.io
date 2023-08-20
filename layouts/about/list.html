@@ -1,11 +1,9 @@
 {{ define "main" }}
-
-<div id="all">
-  <div class="h-24">{{ partial "nav.html" . }}</div>
-  <div class="h-10 bg-gradient-to-b from-gray-100"></div>
-  <div class="flex justify-center">
-    <div class="max-w-screen-lg p-5">{{ .Content }}</div>
+  <div id="all">
+    <div class="h-24">{{ partial "nav.html" . }}</div>
+    <div class="h-10 bg-gradient-to-b from-gray-100"></div>
+    <div class="flex justify-center">
+      <div class="max-w-screen-lg p-5">{{ .Content }}</div>
+    </div>
   </div>
-</div>
-
 {{ end }}

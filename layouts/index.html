@@ -1,15 +1,17 @@
 {{ define "main" }}
+  <div id="all">
+    {{ partial "nav.html" . }}
+    {{ partial "jumbo_carousel.html" . }}
+    {{/* Spacer
+      for little dots
+    */}}
+    <div class="h-10"></div>
 
-<div id="all">
-  {{ partial "nav.html" . }} {{ partial "jumbo_carousel.html" . }} {{/* Spacer
-  for little dots */}}
-  <div class="h-10"></div>
-
-  {{/* Main blurb */}}{{ .Content }}
-</div>
-<!-- /#all -->
-{{ end }} {{/*
-<!--    {{ partial "top.html" . }}
+    {{/* Main blurb */}}{{ .Content }}
+  </div>
+  <!-- /#all -->
+{{ end }}
+{{/* <!--    {{ partial "top.html" . }}
 
 {{ partial "nav.html" . }}
 
@@ -25,5 +27,4 @@
 
 {{ partial "clients.html" . }}
 
-{{ partial "footer.html" . }} -->
-*/}}
+{{ partial "footer.html" . }} --> */}}

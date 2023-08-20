@@ -1,65 +1,79 @@
 <style>
-    .jumbotron-carousel {}
+  .jumbotron-carousel {
+  }
 
-    .jumbotron-carousel-cell {
-        width: 100vw;
-        /* full width */
-        height: 85vh;
-        /* height of carousel */
-        margin-right: 0px;
-    }
+  .jumbotron-carousel-cell {
+    width: 100vw;
+    /* full width */
+    height: 85vh;
+    /* height of carousel */
+    margin-right: 0px;
+  }
 
-    section {
-        padding: 0;
-        margin: 0;
-    }
+  section {
+    padding: 0;
+    margin: 0;
+  }
 </style>
 
 <section>
-    <div class="jumbotron-carousel">
-        {{ range sort .Site.Data.carousel "weight" }}
-        <div class="jumbotron-carousel-cell">
-            {{ $bgImage := resources.Get .image }}
-            {{ $bgImage := $bgImage.Filter (images.Grayscale) (images.Brightness -40) (images.Contrast -30) }}
-            <div class="flex flex-col h-full w-full justify-center items-center text-center bg-no-repeat bg-cover bg-center"
-                style="background-image: url('{{ $bgImage.RelPermalink }}')">
-                <h1
-                    class="p-5 text-white text-4xl sm:text-5xl font-bold max-w-screen-sm leading-snug sm:leading-relaxed">
-                    {{ .title |
-                    safeHTML }}
-                </h1>
-                <div class="mb-14 text-white text-lg font-normal max-w-lg max-sm:hidden">{{ .description | safeHTML }}
-                </div>
-                {{ if .href }}
-                <a class="no-underline" href="{{ .href }}" target="_blank" title="{{ .title | safeHTML }}">
-                    <div class="
+  <div class="jumbotron-carousel">
+    {{ range sort .Site.Data.carousel "weight" }}
+      <div class="jumbotron-carousel-cell">
+        {{ $bgImage := resources.Get .image }}
+        {{ $bgImage := $bgImage.Filter (images.Grayscale) (images.Brightness -40) (images.Contrast -30) }}
+        <div
+          class="flex flex-col h-full w-full justify-center items-center text-center bg-no-repeat bg-cover bg-center"
+          style="background-image: url('{{ $bgImage.RelPermalink }}')"
+        >
+          <h1
+            class="p-5 text-white text-4xl sm:text-5xl font-bold max-w-screen-sm leading-snug sm:leading-relaxed"
+          >
+            {{ .title |
+              safeHTML
+            }}
+          </h1>
+          <div
+            class="mb-14 text-white text-lg font-normal max-w-lg max-sm:hidden"
+          >
+            {{ .description | safeHTML }}
+          </div>
+          {{ if .href }}
+            <a
+              class="no-underline"
+              href="{{ .href }}"
+              target="_blank"
+              title="{{ .title | safeHTML }}"
+            >
+              <div
+                class="
                             py-3 pl-14 pr-4 rounded-full 
                             bg-white  text-black hover:bg-black hover:text-white
                             flex flex-row items-center justify-center
-                        ">
-                        <span class="pt-1 mr-8 text-sm font-semibold">Read more</span>
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </div>
-                </a>
-                {{ end }}
-            </div>
+                        "
+              >
+                <span class="pt-1 mr-8 text-sm font-semibold">Read more</span>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+            </a>
+          {{ end }}
         </div>
-        {{ end }}
-    </div>
-
+      </div>
+    {{ end }}
+  </div>
 </section>
 
 <script>
-    var elem = document.querySelector('.jumbotron-carousel');
-    var flkty = new Flickity(elem, {
-        // options
-        cellAlign: 'left',
-        contain: true
-    });
+  var elem = document.querySelector(".jumbotron-carousel");
+  var flkty = new Flickity(elem, {
+    // options
+    cellAlign: "left",
+    contain: true,
+  });
 
-    // element argument can be a selector string
-    //   for an individual element
-    var flkty = new Flickity('.jumbotron-carousel', {
-        // options
-    });
+  // element argument can be a selector string
+  //   for an individual element
+  var flkty = new Flickity(".jumbotron-carousel", {
+    // options
+  });
 </script>

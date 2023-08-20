@@ -5,13 +5,13 @@ title: Azure Crew
 # theme: hugo-twcss
 
 module:
-  mounts:
-    - source: static
-      target: static
-    - source: assets
-      target: assets
-    - source: static
-      target: assets
+    mounts:
+        - source: static
+          target: static
+        - source: assets
+          target: assets
+        - source: static
+          target: assets
 
 summaryLength: 100 # words --- if you use summaries
 FootnoteReturnLinkContents: "&#8593;"
@@ -22,70 +22,70 @@ pygmentsUseClasses: true
 Paginate: 5 # so five posts will appear on each page from "/posts"
 
 params:
-  # Domain: "example.com"
-  Author: "Your name goes here"
-  Description: "Your site description goes here"
-  Logo: "svg/azurecrewlogo.svg"
-  LogoBlack: "svg/azurecrewlogo-black.svg"
-  LogoWhite: "svg/azurecrewlogo-white.svg"
-  TypeformURL: "https://ae7og37tnte.typeform.com/to/pLK67nqh"
-  date_format: "January 2, 2006"
-  widgets:
-    categories: true
-    tags: true
+    # Domain: "example.com"
+    Author: "Your name goes here"
+    Description: "Your site description goes here"
+    Logo: "svg/azurecrewlogo.svg"
+    LogoBlack: "svg/azurecrewlogo-black.svg"
+    LogoWhite: "svg/azurecrewlogo-white.svg"
+    TypeformURL: "https://ae7og37tnte.typeform.com/to/pLK67nqh"
+    date_format: "January 2, 2006"
+    widgets:
+        categories: true
+        tags: true
 
 taxonomies:
-  category: "categories"
-  tag: "tags"
-  author: "authors"
+    category: "categories"
+    tag: "tags"
+    author: "authors"
 
 theme:
-  - hugo-universal-theme
+    - hugo-universal-theme
 
 markup:
-  # Reverting to Hugo-standard Goldmark parser and will handle typographical niceties
-  # on own (i.e., manually fixing them in my content files),
-  # due to Goldmark's ongoing and unlikely-to-be-resolved issues with typography:
-  # -- e.g.,
-  # https://github.com/gohugoio/hugo/issues/7289,
-  # https://github.com/yuin/goldmark/issues/39#issuecomment-564810327, and
-  # https://github.com/yuin/goldmark/issues/180
-  goldmark:
-    extensions:
-      linkify: false
-    parser:
-      attribute:
-        block: true
-        title: true
-    renderer:
-      unsafe: true
-      # only to allow for inline HTML and/or JS
-      # ... other desired settings are defaults
-    highlight:
-      guessSyntax: true
-      noClasses: false
+    # Reverting to Hugo-standard Goldmark parser and will handle typographical niceties
+    # on own (i.e., manually fixing them in my content files),
+    # due to Goldmark's ongoing and unlikely-to-be-resolved issues with typography:
+    # -- e.g.,
+    # https://github.com/gohugoio/hugo/issues/7289,
+    # https://github.com/yuin/goldmark/issues/39#issuecomment-564810327, and
+    # https://github.com/yuin/goldmark/issues/180
+    goldmark:
+        extensions:
+            linkify: false
+        parser:
+            attribute:
+                block: true
+                title: true
+        renderer:
+            unsafe: true
+            # only to allow for inline HTML and/or JS
+            # ... other desired settings are defaults
+        highlight:
+            guessSyntax: true
+            noClasses: false
 menu:
-  main:
-    - identifier: "home"
-      name: "Home"
-      url: "/"
-      weight: 1
-    - identifier: "services"
-      name: "Services"
-      url: "/services/"
-      weight: 2
-    - identifier: "blog"
-      name: "Blog"
-      title: "This site's posts"
-      url: "/blog/"
-      weight: 3
-    - identifier: "about"
-      name: "About"
-      title: "Whatever you call your 'about' page"
-      url: "/about/"
-      weight: 4
-    - identifier: "contact"
-      name: "Contact"
-      title: "This site's posts"
-      url: "/contact/"
-      weight: 5
+    main:
+        - identifier: "home"
+          name: "Home"
+          url: "/"
+          weight: 1
+        - identifier: "services"
+          name: "Services"
+          url: "/services/"
+          weight: 2
+        - identifier: "blog"
+          name: "Blog"
+          title: "This site's posts"
+          url: "/blog/"
+          weight: 3
+        - identifier: "about"
+          name: "About"
+          title: "Whatever you call your 'about' page"
+          url: "/about/"
+          weight: 4
+        - identifier: "contact"
+          name: "Contact"
+          title: "This site's posts"
+          url: "/contact/"
+          weight: 5
