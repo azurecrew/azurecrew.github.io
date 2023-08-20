@@ -1,21 +1,33 @@
-<div class="w-full max-w-screen-lg flex flex-col justify-between sm:flex-row flex-wrap mb-5">
-  {{ $count := .Get "count" }} {{ with .Site.GetPage "/services" }} {{ if not
-  $count }} {{ $count = .Pages | len}} {{end}} {{range first $count .Pages}}
-  <div class="card glass max-w-xs my-4">
-    <div class="card-body">
-      <h2 class="card-title">{{ .Title }}</h2>
-      <p>
-        {{ .Summary | truncate 120 }}
-        <a class="no-underline hover:underline block" href="{{ .RelPermalink }}">
-          Read more
-        </a>
-      </p>
-      <div class="card-actions justify-end">
-        <a href="/contact/?{{ .Params.id }}=true">
-          <button class="btn btn-primary">Inquire</button>
-        </a>
+<div
+  class="w-full max-w-screen-lg flex flex-col justify-between sm:flex-row flex-wrap mb-5"
+>
+  {{ $count := .Get "count" }}
+  {{ with .Site.GetPage "/services" }}
+    {{ if not
+      $count
+    }}
+      {{ $count = .Pages | len }}
+    {{ end }}
+    {{ range first $count .Pages }}
+      <div class="card glass max-w-xs my-4">
+        <div class="card-body">
+          <h2 class="card-title">{{ .Title }}</h2>
+          <p>
+            {{ .Summary | truncate 120 }}
+            <a
+              class="no-underline hover:underline block"
+              href="{{ .RelPermalink }}"
+            >
+              Read more
+            </a>
+          </p>
+          <div class="card-actions justify-end">
+            <a href="/contact/?{{ .Params.id }}=true">
+              <button class="btn btn-primary">Inquire</button>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  {{ end }} {{ end }}
+    {{ end }}
+  {{ end }}
 </div>

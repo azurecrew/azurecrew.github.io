@@ -1,16 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ .Site.LanguageCode }}" data-theme="lofi">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
 
-<head>
-  {{ partial "head.html" . }}
-</head>
-
-<body>
+  <body>
     {{ block "main" . }}{{ end }}
-  
-  {{ partial "footer.html" . }}
-  {{ partial "scripts.html" . }}
 
-</body>
-
+    {{ partial "footer.html" . }}
+    {{ partial "scripts.html" . }}
+  </body>
 </html>

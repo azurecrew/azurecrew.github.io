@@ -1,11 +1,17 @@
 <div class="my-12 flex flex-col sm:flex-row justify-around items-center">
-    {{$image := resources.Get "img/microsoft-partner.jpg"}}
-    {{$image := $image.Resize "x80"}}
-    <img alt="microsoft partner logo" class="rounded shadow-md" src="{{$image.RelPermalink}}" />
-    <span class="font-semibold text-2xl m-5">&</span>
-    {{$image := resources.Get "img/pax8.jpg"}}
-    {{$image := $image.Resize "x80"}}
-    <img alt="pax8 banner logo" class="rounded shadow-md" src="{{$image.RelPermalink}}" />
-</div>
-
+  {{ $image := resources.Get "img/microsoft-partner.jpg" }}
+  {{ $image := $image.Resize "x80" }}
+  <img
+    alt="microsoft partner logo"
+    class="rounded shadow-md"
+    src=" {{ $image.RelPermalink }} "
+  />
+  <span class="font-semibold text-2xl m-5">&</span>
+  {{ $image := resources.Get "img/pax8.jpg" }}
+  {{ $image := $image.Resize "x80" }}
+  <img
+    alt="pax8 banner logo"
+    class="rounded shadow-md"
+    src=" {{ $image.RelPermalink }} "
+  />
 </div>

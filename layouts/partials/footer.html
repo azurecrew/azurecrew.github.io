@@ -6,7 +6,11 @@
     <div class="max-w-lg">
       <div class="flex justify-between">
         {{ $logo := resources.Get "svg/azurecrewlogo.svg" }}
-        <img src="{{ $logo.RelPermalink }}" alt="{{ .Title }} logo" class="h-10 mb-4" />
+        <img
+          src="{{ $logo.RelPermalink }}"
+          alt="{{ .Title }} logo"
+          class="h-10 mb-4"
+        />
       </div>
 
       <p class="text-sm">
@@ -30,7 +34,8 @@
         {{/* <div class="flex items-center">
           <ion-icon class="mr-2" name="call"></ion-icon>
           <span>+1 (514) 999-9999</span>
-        </div> */}}
+          </div>
+        */}}
         <script>
           function mailto() {
             window.location.href = "mailto:info" + "@" + "azurecrew.com";
@@ -41,9 +46,13 @@
         </script>
         <div class="flex items-center cursor-pointer" x-on:click="mailto()">
           <ion-icon class="mr-2" name="mail"></ion-icon>
-          <img alt="info at azurecrew.com" width="150px" src="/img/infoatazurecrew.png" />
+          <img
+            alt="info at azurecrew.com"
+            width="150px"
+            src="/img/infoatazurecrew.png"
+          />
         </div>
-        <div class="h-1"> </div>
+        <div class="h-1"></div>
         <div class="flex items-center cursor-pointer" x-on:click="callPhone()">
           <ion-icon class="mr-2" name="call"></ion-icon>
           <span>1-800-270-8089</span>
